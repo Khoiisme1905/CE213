@@ -1,0 +1,96 @@
+module circuit_design(
+    input A,
+    input B,
+    input C,
+    input clk,
+    input rst,
+    output Q
+);
+    // Các dây dẫn nội bộ
+    wire [7:0] decoder_out;
+    wire mux_out;
+    wire t_ff_out;
+    
+    // Cài đặt bộ giải mã 3-to-8
+    reg [7:0] decoder_output;
+    always @(*) begin
+        decoder_output = 8'b00000000;
+        case({A, B, C})
+            3'b000: decoder_output[0] = 1'b1;
+            3'b001: decoder_output[1] = 1'b1;
+            3'b010: decoder_output[2] = 1'b1;
+            3'b011: decoder_output[3] = 1'b1;
+            3'b100: decoder_output[4] = 1'b1;
+            3'b101: decoder_output[5] = 1'b1;
+            3'b110: decoder_output[6] = 1'b1;
+            3'b111: decoder_output[7] = 1'b1;
+        endcase
+    end
+    assign decoder_out = decoder_output;
+    
+    // Các cổng logic (dựa trên những gì tôi thấy trong sơ đồ)
+    // Giả định một số kết nối cơ bản, điều chỉnh khi cần thiết dựa trên mạch thực tế
+    assign mux_out = decoder_out[3] | decoder_out[5] | decoder_out[7];
+    
+    // Cài đặt T-Flip Flop
+    reg ff_state;
+    always @(posedge clk or posedge rst) begin
+        if (rst)
+            ff_state <= 1'b0;
+        else if (mux_out)  // Đầu vào T là mux_out
+            ff_state <= ~ff_state;  // Đảo trạng thái khi T=1
+    end
+    assign t_ff_out = ff_state;
+    
+    // Đầu ra cuối cùng
+    assign Q = t_ff_out;
+    
+endmodule
+
+// Testbench để kiểm tra thiết kế
+module testbench;
+    reg A, B, C, clk, rst;
+    wire Q;
+    
+    // Khởi tạo mạch
+    circuit_design dut(
+        .A(A),
+        .B(B),
+        .C(C),
+        .clk(clk),
+        .rst(rst),
+        .Q(Q)
+    );
+    
+    // Tạo xung clock
+    initial begin
+        clk = 0;
+        forever #5 clk = ~clk;
+    end
+    
+    // Chuỗi kiểm tra
+    initial begin
+        // Khởi tạo các đầu vào
+        A = 0; B = 0; C = 0; rst = 1;
+        #10 rst = 0;
+        
+        // Kiểm tra các tổ hợp đầu vào khác nhau
+        #10 A = 0; B = 0; C = 1;
+        #10 A = 0; B = 1; C = 0;
+        #10 A = 0; B = 1; C = 1;
+        #10 A = 1; B = 0; C = 0;
+        #10 A = 1; B = 0; C = 1;
+        #10 A = 1; B = 1; C = 0;
+        #10 A = 1; B = 1; C = 1;
+        
+        // Kết thúc mô phỏng
+        #20 $finish;
+    end
+    
+    // Giám sát kết quả
+    initial begin
+        $monitor("Thời gian = %0t, A = %b, B = %b, C = %b, Q = %b", 
+                 $time, A, B, C, Q);
+    end
+    
+endmodule

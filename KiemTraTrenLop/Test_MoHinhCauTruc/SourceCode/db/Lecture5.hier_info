@@ -1,0 +1,85 @@
+|Lecture5
+A => A~0.IN2
+B => B~0.IN2
+C => C~0.IN1
+clk => clk~0.IN1
+reset => reset~0.IN1
+Q <= t_flip_flop:tff_inst.port3
+
+
+|Lecture5|decoder_3to8:decoder_inst
+A => WideAnd4.IN0
+A => WideAnd5.IN0
+A => WideAnd6.IN0
+A => WideAnd7.IN0
+A => WideAnd0.IN0
+A => WideAnd1.IN0
+A => WideAnd2.IN0
+A => WideAnd3.IN0
+B => WideAnd2.IN1
+B => WideAnd3.IN1
+B => WideAnd6.IN1
+B => WideAnd7.IN1
+B => WideAnd0.IN1
+B => WideAnd1.IN1
+B => WideAnd4.IN1
+B => WideAnd5.IN1
+C => WideAnd1.IN2
+C => WideAnd3.IN2
+C => WideAnd5.IN2
+C => WideAnd7.IN2
+C => WideAnd0.IN2
+C => WideAnd2.IN2
+C => WideAnd4.IN2
+C => WideAnd6.IN2
+out[0] <= WideAnd0.DB_MAX_OUTPUT_PORT_TYPE
+out[1] <= WideAnd1.DB_MAX_OUTPUT_PORT_TYPE
+out[2] <= WideAnd2.DB_MAX_OUTPUT_PORT_TYPE
+out[3] <= WideAnd3.DB_MAX_OUTPUT_PORT_TYPE
+out[4] <= WideAnd4.DB_MAX_OUTPUT_PORT_TYPE
+out[5] <= WideAnd5.DB_MAX_OUTPUT_PORT_TYPE
+out[6] <= WideAnd6.DB_MAX_OUTPUT_PORT_TYPE
+out[7] <= WideAnd7.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Lecture5|mux4:mux_inst
+in0 => in0~0.IN1
+in1 => in1~0.IN1
+in2 => in2~0.IN1
+in3 => in3~0.IN1
+sel0 => sel0~0.IN2
+sel1 => sel1~0.IN1
+out <= mux2:mux_final.port3
+
+
+|Lecture5|mux4:mux_inst|mux2:mux_low
+in0 => w0.IN0
+in1 => w1.IN0
+select => w1.IN1
+select => w0.IN1
+out <= comb~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Lecture5|mux4:mux_inst|mux2:mux_high
+in0 => w0.IN0
+in1 => w1.IN0
+select => w1.IN1
+select => w0.IN1
+out <= comb~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Lecture5|mux4:mux_inst|mux2:mux_final
+in0 => w0.IN0
+in1 => w1.IN0
+select => w1.IN1
+select => w0.IN1
+out <= comb~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Lecture5|t_flip_flop:tff_inst
+T => Q~reg0.ENA
+clk => Q~reg0.CLK
+reset => Q~reg0.ACLR
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
