@@ -1,0 +1,45 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\HK2_24-25\HDL\TH\LAB_4\LAB_04\simulation\modelsim
+vmux2to1_32bit
+IzMVR[5fU[Mid_iQ09@af51
+V=B9<0@cLc_l`:^?_g9zO40
+Z1 dC:\HK2_24-25\HDL\TH\LAB_4\LAB_04\simulation\modelsim
+w1744591967
+8C:/HK2_24-25/HDL/TH/LAB_4/LAB_04/mux2to1_32bit.v
+FC:/HK2_24-25/HDL/TH/LAB_4/LAB_04/mux2to1_32bit.v
+L0 1
+Z2 OV;L;10.1d;51
+r1
+31
+Z3 o-vlog01compat -work work -O0
+!i10b 1
+!s100 8o;Tc:MB;^XFVmR^jd_2?2
+!s85 0
+!s108 1745759370.974000
+!s107 C:/HK2_24-25/HDL/TH/LAB_4/LAB_04/mux2to1_32bit.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/HK2_24-25/HDL/TH/LAB_4/LAB_04|C:/HK2_24-25/HDL/TH/LAB_4/LAB_04/mux2to1_32bit.v|
+!s101 -O0
+Z4 !s92 -vlog01compat -work work +incdir+C:/HK2_24-25/HDL/TH/LAB_4/LAB_04 -O0
+vmux2to1_32bit_tb
+!i10b 1
+!s100 V=om>@Ga:mQXM0^L[bnYA0
+IK8_ic;Bz[[fh=Ya>CndCk2
+VGHQVcN5ec@Im2;TP11FKA3
+R1
+w1745759338
+8C:/HK2_24-25/HDL/TH/LAB_4/LAB_04/mux2to1_32bit_tb.v
+FC:/HK2_24-25/HDL/TH/LAB_4/LAB_04/mux2to1_32bit_tb.v
+L0 3
+R2
+r1
+!s85 0
+31
+!s108 1745759371.022000
+!s107 C:/HK2_24-25/HDL/TH/LAB_4/LAB_04/mux2to1_32bit_tb.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/HK2_24-25/HDL/TH/LAB_4/LAB_04|C:/HK2_24-25/HDL/TH/LAB_4/LAB_04/mux2to1_32bit_tb.v|
+!s101 -O0
+R3
+R4

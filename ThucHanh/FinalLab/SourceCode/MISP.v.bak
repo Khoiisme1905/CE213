@@ -1,0 +1,57 @@
+module MIPS(
+    input clk,
+    input reset
+);
+    wire [31:0] PC, Instr, ReadData, WriteData, ALUResult;
+    wire RegDst, RegWrite, ALUSrc, Jump, MemtoReg, PCSrc, Zero, MemWrite;
+    wire [3:0] ALUControl;
+
+    // Datapath
+    Datapath datapathcomp (
+        .clk(clk),
+        .reset(reset),
+        .RegDst(RegDst),
+        .RegWrite(RegWrite),
+        .ALUSrc(ALUSrc),
+        .Jump(Jump),
+        .MemtoReg(MemtoReg),
+        .PCSrc(PCSrc),
+        .ALUControl(ALUControl),
+        .ReadData(ReadData),
+        .Instr(Instr),
+        .PC(PC),
+        .ZeroFlag(Zero),
+        .WriteData(WriteData),
+        .ALUResult(ALUResult)
+    );
+
+    // Control Unit
+    Controlunit controller (
+        .Opcode(Instr[31:26]),
+        .Func(Instr[5:0]),
+        .Zero(Zero),
+        .MemtoReg(MemtoReg),
+        .MemWrite(MemWrite),
+        .ALUSrc(ALUSrc),
+        .RegDst(RegDst),
+        .RegWrite(RegWrite),
+        .Jump(Jump),
+        .PCSrc(PCSrc),
+        .ALUControl(ALUControl)
+    );
+
+    // Data Memory
+    ram dmem (
+        .clk(clk),
+        .we(MemWrite),
+        .adr(ALUResult),
+        .din(WriteData),
+        .dout(ReadData)
+    );
+
+    // Instruction Memory
+    rom imem (
+        .adr(PC),
+        .dout(Instr)
+    );
+endmodule

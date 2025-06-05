@@ -1,0 +1,8 @@
+module mux2to1_32bit(
+	input wire Sel,
+	input wire [31:0] A, B,
+	output wire [31:0] Out
+);
+
+assign Out = (Sel == 1'b0) ? A : B;
+endmodule 

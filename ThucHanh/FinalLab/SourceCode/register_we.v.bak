@@ -1,0 +1,14 @@
+// Register module with write enable
+module register_we (
+    input clk,
+    input rst,
+    input n,          // Active low enable
+    input we,         // Write enable
+    input [7:0] d,    // Data input
+    output reg [7:0] q  // Data output
+);
+    always @(posedge clk or negedge rst) begin
+        if (!rst) q <= 8'b0;
+        else if (we) q <= d;
+    end
+endmodule

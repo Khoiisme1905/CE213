@@ -1,0 +1,337 @@
+# Reading C:/intelFPGA/18.1/modelsim_ase/tcl/vsim/pref.tcl
+# ERROR: No extended dataflow license exists
+# do MISP_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
+# vmap work rtl_work 
+# Copying C:/intelFPGA/18.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+C:/altera/13.0sp1/Verilog/FinalLab {C:/altera/13.0sp1/Verilog/FinalLab/alu32.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 18:07:46 on Jun 04,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/altera/13.0sp1/Verilog/FinalLab" C:/altera/13.0sp1/Verilog/FinalLab/alu32.v 
+# -- Compiling module alu32
+# 
+# Top level modules:
+# 	alu32
+# End time: 18:07:46 on Jun 04,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/altera/13.0sp1/Verilog/FinalLab {C:/altera/13.0sp1/Verilog/FinalLab/flopr_param.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 18:07:46 on Jun 04,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/altera/13.0sp1/Verilog/FinalLab" C:/altera/13.0sp1/Verilog/FinalLab/flopr_param.v 
+# -- Compiling module flopr_param
+# 
+# Top level modules:
+# 	flopr_param
+# End time: 18:07:46 on Jun 04,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/altera/13.0sp1/Verilog/FinalLab {C:/altera/13.0sp1/Verilog/FinalLab/sl2.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 18:07:46 on Jun 04,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/altera/13.0sp1/Verilog/FinalLab" C:/altera/13.0sp1/Verilog/FinalLab/sl2.v 
+# -- Compiling module sl2
+# 
+# Top level modules:
+# 	sl2
+# End time: 18:07:46 on Jun 04,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/altera/13.0sp1/Verilog/FinalLab {C:/altera/13.0sp1/Verilog/FinalLab/Controlunit.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 18:07:46 on Jun 04,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/altera/13.0sp1/Verilog/FinalLab" C:/altera/13.0sp1/Verilog/FinalLab/Controlunit.v 
+# -- Compiling module Controlunit
+# 
+# Top level modules:
+# 	Controlunit
+# End time: 18:07:46 on Jun 04,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/altera/13.0sp1/Verilog/FinalLab {C:/altera/13.0sp1/Verilog/FinalLab/registerfile32.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 18:07:46 on Jun 04,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/altera/13.0sp1/Verilog/FinalLab" C:/altera/13.0sp1/Verilog/FinalLab/registerfile32.v 
+# -- Compiling module registerfile32
+# 
+# Top level modules:
+# 	registerfile32
+# End time: 18:07:46 on Jun 04,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/altera/13.0sp1/Verilog/FinalLab {C:/altera/13.0sp1/Verilog/FinalLab/ram.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 18:07:46 on Jun 04,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/altera/13.0sp1/Verilog/FinalLab" C:/altera/13.0sp1/Verilog/FinalLab/ram.v 
+# -- Compiling module ram
+# 
+# Top level modules:
+# 	ram
+# End time: 18:07:46 on Jun 04,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/altera/13.0sp1/Verilog/FinalLab {C:/altera/13.0sp1/Verilog/FinalLab/signext.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 18:07:46 on Jun 04,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/altera/13.0sp1/Verilog/FinalLab" C:/altera/13.0sp1/Verilog/FinalLab/signext.v 
+# -- Compiling module signext
+# 
+# Top level modules:
+# 	signext
+# End time: 18:07:47 on Jun 04,2025, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/altera/13.0sp1/Verilog/FinalLab {C:/altera/13.0sp1/Verilog/FinalLab/MISP.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 18:07:47 on Jun 04,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/altera/13.0sp1/Verilog/FinalLab" C:/altera/13.0sp1/Verilog/FinalLab/MISP.v 
+# -- Compiling module MISP
+# 
+# Top level modules:
+# 	MISP
+# End time: 18:07:47 on Jun 04,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/altera/13.0sp1/Verilog/FinalLab {C:/altera/13.0sp1/Verilog/FinalLab/IF_ID_Register.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 18:07:47 on Jun 04,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/altera/13.0sp1/Verilog/FinalLab" C:/altera/13.0sp1/Verilog/FinalLab/IF_ID_Register.v 
+# -- Compiling module IF_ID_Register
+# 
+# Top level modules:
+# 	IF_ID_Register
+# End time: 18:07:47 on Jun 04,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/altera/13.0sp1/Verilog/FinalLab {C:/altera/13.0sp1/Verilog/FinalLab/ID_EX_Register.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 18:07:47 on Jun 04,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/altera/13.0sp1/Verilog/FinalLab" C:/altera/13.0sp1/Verilog/FinalLab/ID_EX_Register.v 
+# -- Compiling module ID_EX_Register
+# 
+# Top level modules:
+# 	ID_EX_Register
+# End time: 18:07:47 on Jun 04,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/altera/13.0sp1/Verilog/FinalLab {C:/altera/13.0sp1/Verilog/FinalLab/EX_MEM_Register.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 18:07:47 on Jun 04,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/altera/13.0sp1/Verilog/FinalLab" C:/altera/13.0sp1/Verilog/FinalLab/EX_MEM_Register.v 
+# -- Compiling module EX_MEM_Register
+# 
+# Top level modules:
+# 	EX_MEM_Register
+# End time: 18:07:47 on Jun 04,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/altera/13.0sp1/Verilog/FinalLab {C:/altera/13.0sp1/Verilog/FinalLab/MEM_WB_Register.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 18:07:47 on Jun 04,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/altera/13.0sp1/Verilog/FinalLab" C:/altera/13.0sp1/Verilog/FinalLab/MEM_WB_Register.v 
+# -- Compiling module MEM_WB_Register
+# 
+# Top level modules:
+# 	MEM_WB_Register
+# End time: 18:07:47 on Jun 04,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/altera/13.0sp1/Verilog/FinalLab {C:/altera/13.0sp1/Verilog/FinalLab/ForwardingUnit.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 18:07:47 on Jun 04,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/altera/13.0sp1/Verilog/FinalLab" C:/altera/13.0sp1/Verilog/FinalLab/ForwardingUnit.v 
+# -- Compiling module ForwardingUnit
+# 
+# Top level modules:
+# 	ForwardingUnit
+# End time: 18:07:47 on Jun 04,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/altera/13.0sp1/Verilog/FinalLab {C:/altera/13.0sp1/Verilog/FinalLab/Datapath_Pipeline.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 18:07:47 on Jun 04,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/altera/13.0sp1/Verilog/FinalLab" C:/altera/13.0sp1/Verilog/FinalLab/Datapath_Pipeline.v 
+# -- Compiling module Datapath_Pipeline
+# 
+# Top level modules:
+# 	Datapath_Pipeline
+# End time: 18:07:47 on Jun 04,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/altera/13.0sp1/Verilog/FinalLab {C:/altera/13.0sp1/Verilog/FinalLab/HazardUnit.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 18:07:47 on Jun 04,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/altera/13.0sp1/Verilog/FinalLab" C:/altera/13.0sp1/Verilog/FinalLab/HazardUnit.v 
+# -- Compiling module HazardUnit
+# 
+# Top level modules:
+# 	HazardUnit
+# End time: 18:07:47 on Jun 04,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/altera/13.0sp1/Verilog/FinalLab {C:/altera/13.0sp1/Verilog/FinalLab/bus.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 18:07:47 on Jun 04,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/altera/13.0sp1/Verilog/FinalLab" C:/altera/13.0sp1/Verilog/FinalLab/bus.v 
+# -- Compiling module bus
+# 
+# Top level modules:
+# 	bus
+# End time: 18:07:47 on Jun 04,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/altera/13.0sp1/Verilog/FinalLab {C:/altera/13.0sp1/Verilog/FinalLab/gpio.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 18:07:47 on Jun 04,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/altera/13.0sp1/Verilog/FinalLab" C:/altera/13.0sp1/Verilog/FinalLab/gpio.v 
+# -- Compiling module gpio
+# 
+# Top level modules:
+# 	gpio
+# End time: 18:07:47 on Jun 04,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/altera/13.0sp1/Verilog/FinalLab {C:/altera/13.0sp1/Verilog/FinalLab/pwm.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 18:07:47 on Jun 04,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/altera/13.0sp1/Verilog/FinalLab" C:/altera/13.0sp1/Verilog/FinalLab/pwm.v 
+# -- Compiling module pwm
+# 
+# Top level modules:
+# 	pwm
+# End time: 18:07:47 on Jun 04,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/altera/13.0sp1/Verilog/FinalLab {C:/altera/13.0sp1/Verilog/FinalLab/Top.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 18:07:47 on Jun 04,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/altera/13.0sp1/Verilog/FinalLab" C:/altera/13.0sp1/Verilog/FinalLab/Top.v 
+# -- Compiling module Top
+# 
+# Top level modules:
+# 	Top
+# End time: 18:07:47 on Jun 04,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/altera/13.0sp1/Verilog/FinalLab {C:/altera/13.0sp1/Verilog/FinalLab/rom.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 18:07:47 on Jun 04,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/altera/13.0sp1/Verilog/FinalLab" C:/altera/13.0sp1/Verilog/FinalLab/rom.v 
+# -- Compiling module rom
+# 
+# Top level modules:
+# 	rom
+# End time: 18:07:47 on Jun 04,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vlog -vlog01compat -work work +incdir+C:/altera/13.0sp1/Verilog/FinalLab {C:/altera/13.0sp1/Verilog/FinalLab/Top_tb.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 18:07:47 on Jun 04,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/altera/13.0sp1/Verilog/FinalLab" C:/altera/13.0sp1/Verilog/FinalLab/Top_tb.v 
+# -- Compiling module Top_tb
+# 
+# Top level modules:
+# 	Top_tb
+# End time: 18:07:47 on Jun 04,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneiv_hssi_ver -L cycloneiv_pcie_hip_ver -L cycloneiv_ver -L rtl_work -L work -voptargs="+acc"  Top_tb
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneiv_hssi_ver -L cycloneiv_pcie_hip_ver -L cycloneiv_ver -L rtl_work -L work -voptargs=""+acc"" Top_tb 
+# Start time: 18:07:47 on Jun 04,2025
+# Loading work.Top_tb
+# Loading work.Top
+# Loading work.MISP
+# Loading work.Controlunit
+# Loading work.Datapath_Pipeline
+# Loading work.flopr_param
+# Loading work.IF_ID_Register
+# Loading work.registerfile32
+# Loading work.signext
+# Loading work.HazardUnit
+# Loading work.ID_EX_Register
+# Loading work.ForwardingUnit
+# Loading work.alu32
+# Loading work.sl2
+# Loading work.EX_MEM_Register
+# Loading work.MEM_WB_Register
+# Loading work.ram
+# Loading work.rom
+# Loading work.bus
+# Loading work.gpio
+# Loading work.pwm
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+# === Top Module Simulation ===
+# Time	PC		Instr		MemAddr		WriteData	ReadData	MemR	MemW	wb_adr_o	wb_dat_o	wb_we_o	wb_stb_o	wb_cyc_o	wb_ack_i	gpioIn	gpioOut	pwmOut
+# ----	----		-----		-------		---------	--------	----	----	--------	--------	-------	-------	-------	-------	------	-------	------
+# 50000	xxxxxxxx	xxxxxxxx	xxxxxxxx	xxxxxxxx	xxxxxxxx	x	x	xxxxxxxx	xxxxxxxx	0	0	0	0	1234	0000	0
+# 150000	00000000	2008000a	00000000	00000000	xxxxxxxx	0	0	00000000	00000000	0	0	0	0	1234	0000	0
+# 250000	00000004	20090005	00000000	00000000	xxxxxxxx	0	0	00000000	00000000	0	0	0	0	1234	0000	0
+# 350000	00000008	01284822	00000000	00000000	xxxxxxxx	0	z	00000000	00000000	0	0	0	0	1234	0000	0
+# 450000	0000000c	ac080000	0000000a	00000000	xxxxxxxx	0	z	0000000a	00000000	0	0	0	0	1234	0000	0
+# 550000	00000010	8c0b0000	00000005	00000000	xxxxxxxx	0	z	00000005	00000000	0	0	0	0	1234	0000	0
+# 650000	00000014	110b0005	fffffffb	0000000a	xxxxxxxx	0	z	fffffffb	0000000a	0	0	0	0	1234	0000	0
+# 750000	00000018	200a0001	00000000	00000000	xxxxxxxx	0	z	00000000	00000000	0	0	0	0	1234	0000	0
+# 850000	0000001c	154b0003	00000000	00000000	xxxxxxxx	1	z	00000000	00000000	0	0	0	0	1234	0000	0
+# 950000	00000020	200b0002	00000000	00000000	xxxxxxxx	0	0	00000000	00000000	0	0	0	0	1234	0000	0
+# 1050000	00000024	ac087f04	xxxxxxxx	xxxxxxxx	xxxxxxxx	0	z	xxxxxxxx	xxxxxxxx	0	0	0	0	1234	0000	0
+# 1150000	0000002X	xxxxxxxx	00000000	00000000	xxxxxxxx	0	z	00000000	00000000	0	0	0	0	5678	0000	0
+# 1250000	0000002c	00000000	00000002	xxxxxxxx	xxxxxxxx	0	z	00000002	xxxxxxxx	0	0	0	0	5678	0000	0
+# 1350000	00000030	xxxxxxxx	00007f04	0000000a	xxxxxxxx	0	z	00007f04	0000000a	0	0	0	0	5678	0000	0
+# 1450000	00000034	xxxxxxxx	00000000	00000000	xxxxxxxx	0	z	00000000	00000000	0	0	0	0	5678	0000	0
+# 1550000	00000038	xxxxxxxx	00000000	00000000	xxxxxxxx	0	z	00000000	00000000	0	0	0	0	5678	0000	0
+# 1650000	0000003c	xxxxxxxx	xxxxxxxx	xxxxxxxx	xxxxxxxx	0	z	xxxxxxxx	xxxxxxxx	0	0	0	0	5678	0000	0
+# 1750000	xxxxxxxx	xxxxxxxx	xxxxxxxx	xxxxxxxx	xxxxxxxx	0	z	xxxxxxxx	xxxxxxxx	0	0	0	0	5678	0000	0
+# 1850000	xxxxxxxx	xxxxxxxx	xxxxxxxx	xxxxxxxx	xxxxxxxx	0	z	xxxxxxxx	xxxxxxxx	0	0	0	0	5678	0000	0
+# 1950000	xxxxxxxx	xxxxxxxx	xxxxxxxx	xxxxxxxx	xxxxxxxx	0	z	xxxxxxxx	xxxxxxxx	0	0	0	0	5678	0000	0
+# 2050000	xxxxxxxx	xxxxxxxx	xxxxxxxx	xxxxxxxx	xxxxxxxx	0	z	xxxxxxxx	xxxxxxxx	0	0	0	0	5678	0000	0
+# 2150000	xxxxxxxx	xxxxxxxx	xxxxxxxx	xxxxxxxx	xxxxxxxx	0	z	xxxxxxxx	xxxxxxxx	0	0	0	0	5678	0000	0
+# 2250000	xxxxxxxx	xxxxxxxx	xxxxxxxx	xxxxxxxx	xxxxxxxx	0	z	xxxxxxxx	xxxxxxxx	0	0	0	0	5678	0000	0
+# 2350000	xxxxxxxx	xxxxxxxx	xxxxxxxx	xxxxxxxx	xxxxxxxx	0	z	xxxxxxxx	xxxxxxxx	0	0	0	0	5678	0000	0
+# 2450000	xxxxxxxx	xxxxxxxx	xxxxxxxx	xxxxxxxx	xxxxxxxx	0	z	xxxxxxxx	xxxxxxxx	0	0	0	0	5678	0000	0
+# 2550000	xxxxxxxx	xxxxxxxx	xxxxxxxx	xxxxxxxx	xxxxxxxx	0	z	xxxxxxxx	xxxxxxxx	0	0	0	0	5678	0000	0
+# 2650000	xxxxxxxx	xxxxxxxx	xxxxxxxx	xxxxxxxx	xxxxxxxx	0	z	xxxxxxxx	xxxxxxxx	0	0	0	0	5678	0000	0
+# 2750000	xxxxxxxx	xxxxxxxx	xxxxxxxx	xxxxxxxx	xxxxxxxx	0	z	xxxxxxxx	xxxxxxxx	0	0	0	0	5678	0000	0
+# 2850000	xxxxxxxx	xxxxxxxx	xxxxxxxx	xxxxxxxx	xxxxxxxx	0	z	xxxxxxxx	xxxxxxxx	0	0	0	0	5678	0000	0
+# 2950000	xxxxxxxx	xxxxxxxx	xxxxxxxx	xxxxxxxx	xxxxxxxx	0	z	xxxxxxxx	xxxxxxxx	0	0	0	0	5678	0000	0
+# 3050000	xxxxxxxx	xxxxxxxx	xxxxxxxx	xxxxxxxx	xxxxxxxx	0	z	xxxxxxxx	xxxxxxxx	0	0	0	0	5678	0000	0
+# 3150000	xxxxxxxx	xxxxxxxx	xxxxxxxx	xxxxxxxx	xxxxxxxx	0	z	xxxxxxxx	xxxxxxxx	0	0	0	0	5678	0000	0
+# 3250000	xxxxxxxx	xxxxxxxx	xxxxxxxx	xxxxxxxx	xxxxxxxx	0	z	xxxxxxxx	xxxxxxxx	0	0	0	0	5678	0000	0
+# 3350000	xxxxxxxx	xxxxxxxx	xxxxxxxx	xxxxxxxx	xxxxxxxx	0	z	xxxxxxxx	xxxxxxxx	0	0	0	0	5678	0000	0
+# 3450000	xxxxxxxx	xxxxxxxx	xxxxxxxx	xxxxxxxx	xxxxxxxx	0	z	xxxxxxxx	xxxxxxxx	0	0	0	0	5678	0000	0
+# 3550000	xxxxxxxx	xxxxxxxx	xxxxxxxx	xxxxxxxx	xxxxxxxx	0	z	xxxxxxxx	xxxxxxxx	0	0	0	0	5678	0000	0
+# 3650000	xxxxxxxx	xxxxxxxx	xxxxxxxx	xxxxxxxx	xxxxxxxx	0	z	xxxxxxxx	xxxxxxxx	0	0	0	0	5678	0000	0
+# 3750000	xxxxxxxx	xxxxxxxx	xxxxxxxx	xxxxxxxx	xxxxxxxx	0	z	xxxxxxxx	xxxxxxxx	0	0	0	0	5678	0000	0
+# 3850000	xxxxxxxx	xxxxxxxx	xxxxxxxx	xxxxxxxx	xxxxxxxx	0	z	xxxxxxxx	xxxxxxxx	0	0	0	0	5678	0000	0
+# 3950000	xxxxxxxx	xxxxxxxx	xxxxxxxx	xxxxxxxx	xxxxxxxx	0	z	xxxxxxxx	xxxxxxxx	0	0	0	0	5678	0000	0
+# 4050000	xxxxxxxx	xxxxxxxx	xxxxxxxx	xxxxxxxx	xxxxxxxx	0	z	xxxxxxxx	xxxxxxxx	0	0	0	0	5678	0000	0
+# 4150000	xxxxxxxx	xxxxxxxx	xxxxxxxx	xxxxxxxx	xxxxxxxx	0	z	xxxxxxxx	xxxxxxxx	0	0	0	0	5678	0000	0
+# 4250000	xxxxxxxx	xxxxxxxx	xxxxxxxx	xxxxxxxx	xxxxxxxx	0	z	xxxxxxxx	xxxxxxxx	0	0	0	0	5678	0000	0
+# 4350000	xxxxxxxx	xxxxxxxx	xxxxxxxx	xxxxxxxx	xxxxxxxx	0	z	xxxxxxxx	xxxxxxxx	0	0	0	0	5678	0000	0
+# 4450000	xxxxxxxx	xxxxxxxx	xxxxxxxx	xxxxxxxx	xxxxxxxx	0	z	xxxxxxxx	xxxxxxxx	0	0	0	0	5678	0000	0
+# 4550000	xxxxxxxx	xxxxxxxx	xxxxxxxx	xxxxxxxx	xxxxxxxx	0	z	xxxxxxxx	xxxxxxxx	0	0	0	0	5678	0000	0
+# 4650000	xxxxxxxx	xxxxxxxx	xxxxxxxx	xxxxxxxx	xxxxxxxx	0	z	xxxxxxxx	xxxxxxxx	0	0	0	0	5678	0000	0
+# 4750000	xxxxxxxx	xxxxxxxx	xxxxxxxx	xxxxxxxx	xxxxxxxx	0	z	xxxxxxxx	xxxxxxxx	0	0	0	0	5678	0000	0
+# 4850000	xxxxxxxx	xxxxxxxx	xxxxxxxx	xxxxxxxx	xxxxxxxx	0	z	xxxxxxxx	xxxxxxxx	0	0	0	0	5678	0000	0
+# 4950000	xxxxxxxx	xxxxxxxx	xxxxxxxx	xxxxxxxx	xxxxxxxx	0	z	xxxxxxxx	xxxxxxxx	0	0	0	0	5678	0000	0
+# 5050000	xxxxxxxx	xxxxxxxx	xxxxxxxx	xxxxxxxx	xxxxxxxx	0	z	xxxxxxxx	xxxxxxxx	0	0	0	0	5678	0000	0
+# 5150000	xxxxxxxx	xxxxxxxx	xxxxxxxx	xxxxxxxx	xxxxxxxx	0	z	xxxxxxxx	xxxxxxxx	0	0	0	0	5678	0000	0
+# 5250000	xxxxxxxx	xxxxxxxx	xxxxxxxx	xxxxxxxx	xxxxxxxx	0	z	xxxxxxxx	xxxxxxxx	0	0	0	0	5678	0000	0
+# 5350000	xxxxxxxx	xxxxxxxx	xxxxxxxx	xxxxxxxx	xxxxxxxx	0	z	xxxxxxxx	xxxxxxxx	0	0	0	0	5678	0000	0
+# 5450000	xxxxxxxx	xxxxxxxx	xxxxxxxx	xxxxxxxx	xxxxxxxx	0	z	xxxxxxxx	xxxxxxxx	0	0	0	0	5678	0000	0
+# 5550000	xxxxxxxx	xxxxxxxx	xxxxxxxx	xxxxxxxx	xxxxxxxx	0	z	xxxxxxxx	xxxxxxxx	0	0	0	0	5678	0000	0
+# 5650000	xxxxxxxx	xxxxxxxx	xxxxxxxx	xxxxxxxx	xxxxxxxx	0	z	xxxxxxxx	xxxxxxxx	0	0	0	0	5678	0000	0
+# 5750000	xxxxxxxx	xxxxxxxx	xxxxxxxx	xxxxxxxx	xxxxxxxx	0	z	xxxxxxxx	xxxxxxxx	0	0	0	0	5678	0000	0
+# 5850000	xxxxxxxx	xxxxxxxx	xxxxxxxx	xxxxxxxx	xxxxxxxx	0	z	xxxxxxxx	xxxxxxxx	0	0	0	0	5678	0000	0
+# 5950000	xxxxxxxx	xxxxxxxx	xxxxxxxx	xxxxxxxx	xxxxxxxx	0	z	xxxxxxxx	xxxxxxxx	0	0	0	0	5678	0000	0
+# 6050000	xxxxxxxx	xxxxxxxx	xxxxxxxx	xxxxxxxx	xxxxxxxx	0	z	xxxxxxxx	xxxxxxxx	0	0	0	0	5678	0000	0
+# 6150000	xxxxxxxx	xxxxxxxx	xxxxxxxx	xxxxxxxx	xxxxxxxx	0	z	xxxxxxxx	xxxxxxxx	0	0	0	0	5678	0000	0
+# 6250000	xxxxxxxx	xxxxxxxx	xxxxxxxx	xxxxxxxx	xxxxxxxx	0	z	xxxxxxxx	xxxxxxxx	0	0	0	0	5678	0000	0
+# 6350000	xxxxxxxx	xxxxxxxx	xxxxxxxx	xxxxxxxx	xxxxxxxx	0	z	xxxxxxxx	xxxxxxxx	0	0	0	0	5678	0000	0
+# 6450000	xxxxxxxx	xxxxxxxx	xxxxxxxx	xxxxxxxx	xxxxxxxx	0	z	xxxxxxxx	xxxxxxxx	0	0	0	0	5678	0000	0
+# 
+# === Simulation Summary ===
+# GPIO Output value: 0000
+# PWM Output state: 0
+# Total cycles: 65
+# 
+# Simulation complete.
+# ** Note: $finish    : C:/altera/13.0sp1/Verilog/FinalLab/Top_tb.v(101)
+#    Time: 6500 ns  Iteration: 0  Instance: /Top_tb
+# 1
+# Break in Module Top_tb at C:/altera/13.0sp1/Verilog/FinalLab/Top_tb.v line 101
+# End time: 18:16:03 on Jun 04,2025, Elapsed time: 0:08:16
+# Errors: 0, Warnings: 0

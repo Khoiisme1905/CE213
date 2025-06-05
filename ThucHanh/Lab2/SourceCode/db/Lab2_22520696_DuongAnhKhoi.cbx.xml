@@ -1,0 +1,7 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="Lab2_22520696_DuongAnhKhoi">
+		<CBX_INST_ENTRY INSTANCE_NAME="|Lab2_22520696_DuongAnhKhoi_BTThem|altsyncram:regFile_rtl_0" CBX_FILE_NAME="altsyncram_sng1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|Lab2_22520696_DuongAnhKhoi_BTThem|altsyncram:regFile_rtl_1" CBX_FILE_NAME="altsyncram_sng1.tdf"/>
+	</PROJECT>
+</LOG_ROOT>

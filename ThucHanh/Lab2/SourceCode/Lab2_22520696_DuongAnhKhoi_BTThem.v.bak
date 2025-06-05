@@ -1,0 +1,11 @@
+module Lab2_22520696_DuongAnhKhoi_BTThem(
+	input clk,
+	input [31:0] ReadAdd1,
+	input [31:0] ReadAdd2,
+	input [31:0] WriteAdd1,
+	input [31:0] WriteAdd2,
+	input ReadAddEn,
+	output [31:0] ReadData1,
+	output [31:0] ReadData2,
+	reg [31:0] regFile [31:0]
+);

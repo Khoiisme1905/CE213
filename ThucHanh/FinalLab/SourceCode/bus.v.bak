@@ -1,0 +1,65 @@
+module bus (
+    input clk,
+    input reset,
+    // CPU interface (from Datapath)
+    input [31:0] cpu_addr,
+    input [31:0] cpu_data_write,
+    input cpu_read,
+    input cpu_write,
+    output reg [31:0] cpu_data_read,
+    // Slave interfaces
+    output reg [4:0] bSel,
+    output reg [31:0] slave_addr,
+    output reg [31:0] slave_data_write,
+    output reg slave_read,
+    output reg slave_write,
+    // Data from Slaves
+    input [31:0] memory_data,   // From Data Memory (ram)
+    input [31:0] gpio_in,       // From GPIO Input
+    input [31:0] gpio_out,      // From GPIO Output
+    input [31:0] pwm_data       // From PWM
+);
+    // Decoder instance
+    bus_decoder decoder (
+        .bAddr(cpu_addr),
+        .bSel(bSel)
+    );
+
+    // Mux instance
+    bus_mux mux (
+        .bSel(bSel),
+        .in0(32'b0),        // Default (no Slave selected)
+        .in1(memory_data),  // Data Memory
+        .in2(gpio_in),      // GPIO Input
+        .in3(gpio_out),     // GPIO Output
+        .in4(pwm_data),     // PWM
+        .in5(32'b0),        // Reserved for future Slaves
+        .bData(cpu_data_read)
+    );
+
+    // Bus logic: Forward signals to Slaves
+    always @(posedge clk or posedge reset) begin
+        if (reset) begin
+            bSel <= 5'b00000;
+            slave_addr <= 32'b0;
+            slave_data_write <= 32'b0;
+            slave_read <= 1'b0;
+            slave_write <= 1'b0;
+        end else begin
+            if (cpu_read || cpu_write) begin
+                bSel <= bSel; // Updated by decoder
+                slave_addr <= cpu_addr;
+                slave_data_write <= cpu_data_write;
+                slave_read <= cpu_read;
+                slave_write <= cpu_write;
+            end else begin
+                bSel <= 5'b00000;
+                slave_addr <= 32'b0;
+                slave_data_write <= 32'b0;
+                slave_read <= 1'b0;
+                slave_write <= 1'b0;
+            end
+        end
+    end
+
+endmodule

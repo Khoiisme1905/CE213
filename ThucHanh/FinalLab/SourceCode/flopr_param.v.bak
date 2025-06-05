@@ -1,0 +1,12 @@
+module flopr_param (
+    input clk,
+    input rst,
+    input [n-1:0] d,
+    output reg [n-1:0] q
+);
+    parameter n = 32;
+    always @(posedge clk) begin
+        if (rst) q <= 0; // Sửa logic reset
+        else q <= d;
+    end
+endmodule

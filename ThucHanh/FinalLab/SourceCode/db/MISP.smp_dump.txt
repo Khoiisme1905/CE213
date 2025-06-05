@@ -1,0 +1,6 @@
+
+State Machine - |Top|bus:bus_inst|state
+Name state.IDLE state.WAIT_ACK state.REQUEST 
+state.IDLE 0 0 0 
+state.REQUEST 1 0 1 
+state.WAIT_ACK 1 1 0 

@@ -1,0 +1,483 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/altera/13.0sp1/Verilog/FinalLab/simulation/modelsim
+valu32
+Z1 !s110 1749035266
+!i10b 1
+!s100 aid30^IO<KJdJRG[e]ALz2
+I1OI>U59M16P`l[gX0L?2>3
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1746434819
+8C:/altera/13.0sp1/Verilog/FinalLab/alu32.v
+FC:/altera/13.0sp1/Verilog/FinalLab/alu32.v
+L0 1
+Z3 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z4 !s108 1749035266.000000
+!s107 C:/altera/13.0sp1/Verilog/FinalLab/alu32.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/altera/13.0sp1/Verilog/FinalLab|C:/altera/13.0sp1/Verilog/FinalLab/alu32.v|
+!i113 1
+Z5 o-vlog01compat -work work
+Z6 !s92 -vlog01compat -work work +incdir+C:/altera/13.0sp1/Verilog/FinalLab
+Z7 tCvgOpt 0
+vbus
+Z8 !s110 1749035267
+!i10b 1
+!s100 HoVQ80jnCJHETGcjbjOb01
+IAM<IfBZ`@2[XlbmLDiR1K0
+R2
+R0
+w1748326190
+8C:/altera/13.0sp1/Verilog/FinalLab/bus.v
+FC:/altera/13.0sp1/Verilog/FinalLab/bus.v
+L0 2
+R3
+r1
+!s85 0
+31
+Z9 !s108 1749035267.000000
+!s107 C:/altera/13.0sp1/Verilog/FinalLab/bus.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/altera/13.0sp1/Verilog/FinalLab|C:/altera/13.0sp1/Verilog/FinalLab/bus.v|
+!i113 1
+R5
+R6
+R7
+vControlunit
+R1
+!i10b 1
+!s100 c>=Un:8X8od>c[a8J:WHN0
+IAg:nKHm7@cTb4e8ZgF]<50
+R2
+R0
+w1748327976
+8C:/altera/13.0sp1/Verilog/FinalLab/Controlunit.v
+FC:/altera/13.0sp1/Verilog/FinalLab/Controlunit.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/altera/13.0sp1/Verilog/FinalLab/Controlunit.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/altera/13.0sp1/Verilog/FinalLab|C:/altera/13.0sp1/Verilog/FinalLab/Controlunit.v|
+!i113 1
+R5
+R6
+R7
+n@controlunit
+vDatapath_Pipeline
+R8
+!i10b 1
+!s100 J5SHJ5MN[583eiBGAWDXU3
+I^JmLea9MYdcKHVmGHRj[T1
+R2
+R0
+w1748327126
+8C:/altera/13.0sp1/Verilog/FinalLab/Datapath_Pipeline.v
+FC:/altera/13.0sp1/Verilog/FinalLab/Datapath_Pipeline.v
+L0 2
+R3
+r1
+!s85 0
+31
+R9
+!s107 C:/altera/13.0sp1/Verilog/FinalLab/Datapath_Pipeline.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/altera/13.0sp1/Verilog/FinalLab|C:/altera/13.0sp1/Verilog/FinalLab/Datapath_Pipeline.v|
+!i113 1
+R5
+R6
+R7
+n@datapath_@pipeline
+vEX_MEM_Register
+R8
+!i10b 1
+!s100 RZPGO?zz[BoRo=`F78NSP3
+I:FcnC0HN4UL`>LoB=CWDL3
+R2
+R0
+w1747665166
+8C:/altera/13.0sp1/Verilog/FinalLab/EX_MEM_Register.v
+FC:/altera/13.0sp1/Verilog/FinalLab/EX_MEM_Register.v
+L0 1
+R3
+r1
+!s85 0
+31
+R9
+!s107 C:/altera/13.0sp1/Verilog/FinalLab/EX_MEM_Register.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/altera/13.0sp1/Verilog/FinalLab|C:/altera/13.0sp1/Verilog/FinalLab/EX_MEM_Register.v|
+!i113 1
+R5
+R6
+R7
+n@e@x_@m@e@m_@register
+vflopr_param
+R1
+!i10b 1
+!s100 I8BD0]YLO8S07CceK<1Q50
+IgG;]e[Tj:]Kj5NWe_:KjX2
+R2
+R0
+w1746435165
+8C:/altera/13.0sp1/Verilog/FinalLab/flopr_param.v
+FC:/altera/13.0sp1/Verilog/FinalLab/flopr_param.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/altera/13.0sp1/Verilog/FinalLab/flopr_param.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/altera/13.0sp1/Verilog/FinalLab|C:/altera/13.0sp1/Verilog/FinalLab/flopr_param.v|
+!i113 1
+R5
+R6
+R7
+vForwardingUnit
+R8
+!i10b 1
+!s100 YCQaeb3lZ28B0KMJfBfdo1
+I:YE<]IVkVc79P@=o9N2Dk2
+R2
+R0
+w1747665230
+8C:/altera/13.0sp1/Verilog/FinalLab/ForwardingUnit.v
+FC:/altera/13.0sp1/Verilog/FinalLab/ForwardingUnit.v
+L0 1
+R3
+r1
+!s85 0
+31
+R9
+!s107 C:/altera/13.0sp1/Verilog/FinalLab/ForwardingUnit.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/altera/13.0sp1/Verilog/FinalLab|C:/altera/13.0sp1/Verilog/FinalLab/ForwardingUnit.v|
+!i113 1
+R5
+R6
+R7
+n@forwarding@unit
+vgpio
+R8
+!i10b 1
+!s100 L]XQR6GB8P8e7R@kEMMRm2
+I^O4mIRJZ=Y>;7RUU<LXla2
+R2
+R0
+w1748326109
+8C:/altera/13.0sp1/Verilog/FinalLab/gpio.v
+FC:/altera/13.0sp1/Verilog/FinalLab/gpio.v
+L0 1
+R3
+r1
+!s85 0
+31
+R9
+!s107 C:/altera/13.0sp1/Verilog/FinalLab/gpio.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/altera/13.0sp1/Verilog/FinalLab|C:/altera/13.0sp1/Verilog/FinalLab/gpio.v|
+!i113 1
+R5
+R6
+R7
+vHazardUnit
+R8
+!i10b 1
+!s100 Wm]8caTdmJEBb<;l9zTIJ0
+Ikll38B:XT=RCPmIPCl:]?3
+R2
+R0
+w1747665648
+8C:/altera/13.0sp1/Verilog/FinalLab/HazardUnit.v
+FC:/altera/13.0sp1/Verilog/FinalLab/HazardUnit.v
+L0 1
+R3
+r1
+!s85 0
+31
+R9
+!s107 C:/altera/13.0sp1/Verilog/FinalLab/HazardUnit.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/altera/13.0sp1/Verilog/FinalLab|C:/altera/13.0sp1/Verilog/FinalLab/HazardUnit.v|
+!i113 1
+R5
+R6
+R7
+n@hazard@unit
+vID_EX_Register
+R8
+!i10b 1
+!s100 c8eR[GB;>4WXboQG4ncQS3
+IbEMLSAYfd7olZ6YB_zjj61
+R2
+R0
+w1747665147
+8C:/altera/13.0sp1/Verilog/FinalLab/ID_EX_Register.v
+FC:/altera/13.0sp1/Verilog/FinalLab/ID_EX_Register.v
+L0 1
+R3
+r1
+!s85 0
+31
+R9
+!s107 C:/altera/13.0sp1/Verilog/FinalLab/ID_EX_Register.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/altera/13.0sp1/Verilog/FinalLab|C:/altera/13.0sp1/Verilog/FinalLab/ID_EX_Register.v|
+!i113 1
+R5
+R6
+R7
+n@i@d_@e@x_@register
+vIF_ID_Register
+R8
+!i10b 1
+!s100 n_PVlz`BS2jU0;5aBd^z_0
+I:SFL`gPg7PjLzD=KPe8QN2
+R2
+R0
+w1747665125
+8C:/altera/13.0sp1/Verilog/FinalLab/IF_ID_Register.v
+FC:/altera/13.0sp1/Verilog/FinalLab/IF_ID_Register.v
+L0 1
+R3
+r1
+!s85 0
+31
+R9
+!s107 C:/altera/13.0sp1/Verilog/FinalLab/IF_ID_Register.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/altera/13.0sp1/Verilog/FinalLab|C:/altera/13.0sp1/Verilog/FinalLab/IF_ID_Register.v|
+!i113 1
+R5
+R6
+R7
+n@i@f_@i@d_@register
+vMEM_WB_Register
+R8
+!i10b 1
+!s100 FEbj<TUFOf3MYKIDeWacH0
+IF_SDXEZKAT869XIb`i]Zi2
+R2
+R0
+w1747665216
+8C:/altera/13.0sp1/Verilog/FinalLab/MEM_WB_Register.v
+FC:/altera/13.0sp1/Verilog/FinalLab/MEM_WB_Register.v
+L0 1
+R3
+r1
+!s85 0
+31
+R9
+!s107 C:/altera/13.0sp1/Verilog/FinalLab/MEM_WB_Register.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/altera/13.0sp1/Verilog/FinalLab|C:/altera/13.0sp1/Verilog/FinalLab/MEM_WB_Register.v|
+!i113 1
+R5
+R6
+R7
+n@m@e@m_@w@b_@register
+vMISP
+R8
+!i10b 1
+!s100 MLkC^JJn>NiAoIb8bH8A71
+I_I=`?WQPLHJDCVHV=UV>K1
+R2
+R0
+w1748329881
+8C:/altera/13.0sp1/Verilog/FinalLab/MISP.v
+FC:/altera/13.0sp1/Verilog/FinalLab/MISP.v
+L0 1
+R3
+r1
+!s85 0
+31
+R9
+!s107 C:/altera/13.0sp1/Verilog/FinalLab/MISP.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/altera/13.0sp1/Verilog/FinalLab|C:/altera/13.0sp1/Verilog/FinalLab/MISP.v|
+!i113 1
+R5
+R6
+R7
+n@m@i@s@p
+vpwm
+R8
+!i10b 1
+!s100 cnL18S[:cKn0b0@]TaPJo0
+IFQK1WGm>5`2c2dKjoRkRa0
+R2
+R0
+w1748327857
+8C:/altera/13.0sp1/Verilog/FinalLab/pwm.v
+FC:/altera/13.0sp1/Verilog/FinalLab/pwm.v
+L0 1
+R3
+r1
+!s85 0
+31
+R9
+!s107 C:/altera/13.0sp1/Verilog/FinalLab/pwm.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/altera/13.0sp1/Verilog/FinalLab|C:/altera/13.0sp1/Verilog/FinalLab/pwm.v|
+!i113 1
+R5
+R6
+R7
+vram
+R1
+!i10b 1
+!s100 >O_;H91c4BiBhdX67ibXO3
+I?Vz4zG0BN8]ZGKb02m4H40
+R2
+R0
+w1748326098
+8C:/altera/13.0sp1/Verilog/FinalLab/ram.v
+FC:/altera/13.0sp1/Verilog/FinalLab/ram.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/altera/13.0sp1/Verilog/FinalLab/ram.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/altera/13.0sp1/Verilog/FinalLab|C:/altera/13.0sp1/Verilog/FinalLab/ram.v|
+!i113 1
+R5
+R6
+R7
+vregisterfile32
+R1
+!i10b 1
+!s100 Zf]je4k4z`g8Ng9eQ1QGJ1
+I7cGn22=Ak<n0Xc3:O5@h:3
+R2
+R0
+w1746433849
+8C:/altera/13.0sp1/Verilog/FinalLab/registerfile32.v
+FC:/altera/13.0sp1/Verilog/FinalLab/registerfile32.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/altera/13.0sp1/Verilog/FinalLab/registerfile32.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/altera/13.0sp1/Verilog/FinalLab|C:/altera/13.0sp1/Verilog/FinalLab/registerfile32.v|
+!i113 1
+R5
+R6
+R7
+vrom
+R8
+!i10b 1
+!s100 nMF[4TYj;G0W72cCn^_@k1
+IBlgP5H@[=WHmBCH4FP=k?3
+R2
+R0
+w1748091411
+8C:/altera/13.0sp1/Verilog/FinalLab/rom.v
+FC:/altera/13.0sp1/Verilog/FinalLab/rom.v
+L0 1
+R3
+r1
+!s85 0
+31
+R9
+!s107 C:/altera/13.0sp1/Verilog/FinalLab/rom.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/altera/13.0sp1/Verilog/FinalLab|C:/altera/13.0sp1/Verilog/FinalLab/rom.v|
+!i113 1
+R5
+R6
+R7
+vsignext
+R8
+!i10b 1
+!s100 :9G3M>1YWh^U^;b5K;hOD1
+IKSA3Q0zQML`>Ah3cTai4L2
+R2
+R0
+w1746433872
+8C:/altera/13.0sp1/Verilog/FinalLab/signext.v
+FC:/altera/13.0sp1/Verilog/FinalLab/signext.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/altera/13.0sp1/Verilog/FinalLab/signext.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/altera/13.0sp1/Verilog/FinalLab|C:/altera/13.0sp1/Verilog/FinalLab/signext.v|
+!i113 1
+R5
+R6
+R7
+vsl2
+R1
+!i10b 1
+!s100 I<1i_Sk3a;Y^IFB;K8l2l2
+IUJh[7ln>`2KbkO3L4QCAC1
+R2
+R0
+w1746434884
+8C:/altera/13.0sp1/Verilog/FinalLab/sl2.v
+FC:/altera/13.0sp1/Verilog/FinalLab/sl2.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/altera/13.0sp1/Verilog/FinalLab/sl2.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/altera/13.0sp1/Verilog/FinalLab|C:/altera/13.0sp1/Verilog/FinalLab/sl2.v|
+!i113 1
+R5
+R6
+R7
+vTop
+R8
+!i10b 1
+!s100 VQ8h0fnCnbCjNIGU^YlR^3
+I;okT0Fk^E75iW0XIZ]JBZ1
+R2
+R0
+w1748330677
+8C:/altera/13.0sp1/Verilog/FinalLab/Top.v
+FC:/altera/13.0sp1/Verilog/FinalLab/Top.v
+L0 1
+R3
+r1
+!s85 0
+31
+R9
+!s107 C:/altera/13.0sp1/Verilog/FinalLab/Top.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/altera/13.0sp1/Verilog/FinalLab|C:/altera/13.0sp1/Verilog/FinalLab/Top.v|
+!i113 1
+R5
+R6
+R7
+n@top
+vTop_tb
+R8
+!i10b 1
+!s100 =j^k>a`n>D:340d>G1KKG1
+IYSF`Tl6WEIFD40;z3;;IX2
+R2
+R0
+w1748330589
+8C:/altera/13.0sp1/Verilog/FinalLab/Top_tb.v
+FC:/altera/13.0sp1/Verilog/FinalLab/Top_tb.v
+L0 3
+R3
+r1
+!s85 0
+31
+R9
+!s107 C:/altera/13.0sp1/Verilog/FinalLab/Top_tb.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/altera/13.0sp1/Verilog/FinalLab|C:/altera/13.0sp1/Verilog/FinalLab/Top_tb.v|
+!i113 1
+R5
+R6
+R7
+n@top_tb

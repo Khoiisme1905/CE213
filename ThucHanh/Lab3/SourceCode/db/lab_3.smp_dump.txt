@@ -1,0 +1,7 @@
+
+State Machine - |lab_3_moore|cur_state
+Name cur_state.11 cur_state.10 cur_state.01 cur_state.00 
+cur_state.00 0 0 0 0 
+cur_state.01 0 0 1 1 
+cur_state.10 0 1 0 1 
+cur_state.11 1 0 0 1 

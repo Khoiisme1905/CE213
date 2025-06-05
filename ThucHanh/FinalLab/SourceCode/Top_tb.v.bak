@@ -1,0 +1,102 @@
+`timescale 1ns/100ps
+
+module Top_tb;
+    reg clk;
+    reg reset;
+    reg [15:0] gpioIn;
+    wire [15:0] gpioOut;
+    wire pwmOut;
+
+    // Signals from Datapath and bus
+    wire [31:0] PC;
+    wire [31:0] Instr;
+    wire [31:0] MemAddr;
+    wire [31:0] WriteData;
+    wire [31:0] ReadData;
+    wire MemRead, MemWrite;
+    wire [4:0] bSel;
+
+    // Instantiate the Top module
+    Top top_inst (
+        .clk(clk),
+        .reset(reset),
+        .gpioIn(gpioIn),
+        .gpioOut(gpioOut),
+        .pwmOut(pwmOut)
+    );
+
+    // Assign internal signals for monitoring
+    assign PC = top_inst.datapath.PC;
+    assign Instr = top_inst.datapath.Instr;
+    assign MemAddr = top_inst.datapath.MemAddr;
+    assign WriteData = top_inst.datapath.WriteData;
+    assign ReadData = top_inst.datapath.ReadData;
+    assign MemRead = top_inst.datapath.MemRead;
+    assign MemWrite = top_inst.datapath.MemWrite;
+    assign bSel = top_inst.bus_inst.bSel;
+
+    // Clock generation - 100ns period
+    initial clk = 0;
+    always #50 clk = ~clk;
+
+    // Test sequence
+    initial begin
+        // Create VCD file for waveform viewing
+        $dumpfile("top_simulation.vcd");
+        $dumpvars(0, Top_tb);
+
+        // Display header
+        $display("=== Top Module Simulation ===");
+        $display("Time\t PC\t\t Instr\t\t MemAddr\t WriteData\t ReadData\t bSel\t gpioOut\t pwmOut");
+        $display("----\t ----\t\t -----\t\t -------\t ---------\t --------\t ----\t -------\t ------");
+
+        // Initialize signals
+        reset = 1;
+        gpioIn = 16'h1234;
+
+        // Reset sequence
+        #100;
+        reset = 0;
+
+        // Monitor signals during execution
+        $monitor("%0t\t %h\t %h\t %h\t %h\t %h\t %b\t %h\t %b", 
+                 $time, PC, Instr, MemAddr, WriteData, ReadData, bSel, gpioOut, pwmOut);
+
+        // Test scenario
+        #200; // Wait for pipeline to fill
+        // Test writing to gpioOut (0x00007f04)
+        // Assume program.hex has instructions to load 0xABCD to gpioOut
+        #400;
+        // Test writing to PWM (0x00000710) with comp = 0x80
+        #400;
+        // Test reading from gpioIn
+        #400;
+
+        // Run for additional cycles
+        repeat (50) #100;
+
+        // Display simulation summary
+        $display("\n=== Simulation Summary ===");
+        $display("GPIO Output value: %h", gpioOut);
+        $display("PWM Output state: %b", pwmOut);
+        $display("Total cycles: %0d", ($time/100));
+
+        $display("\nSimulation complete.");
+        $finish;
+    end
+
+    // Error checking
+    always @(posedge clk) begin
+        if (!reset) begin
+            // Check PC alignment
+            if (PC[1:0] != 2'b00) begin
+                $display("ERROR: PC not word-aligned at time %0t", $time);
+            end
+            // Check bus selection
+            if (MemWrite && bSel == 5'b00000) begin
+                $display("ERROR: No Slave selected during write at time %0t", $time);
+            end
+        end
+    end
+
+endmodule

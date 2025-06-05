@@ -1,0 +1,55 @@
+module pwm (
+    input clk,
+    input rst,
+    input [4:0] bSel,
+    input bWrite,
+    input [31:0] bWData,
+    output reg [31:0] bRData,
+    output reg pwmOut
+);
+    // Counter and compare value
+    reg [7:0] count;
+    reg [7:0] comp;
+
+    // Write enable for compare value
+    wire compWe;
+    assign compWe = bSel[3] & bWrite; // bSel[3] for PWM (0x00000710)
+
+    // Register for compare value
+    register_we comp_reg (
+        .clk(clk),
+        .rst(rst),
+        .n(~compWe),
+        .we(compWe),
+        .d(bWData[7:0]),
+        .q(comp)
+    );
+
+    // Counter logic
+    always @(posedge clk or negedge rst) begin
+        if (!rst) count <= 8'b0;
+        else count <= count + 1;
+    end
+
+    // PWM output logic
+    always @(*) begin
+        pwmOut = (count > comp);
+        bRData = {24'b0, comp}; // Return compare value
+    end
+
+endmodule
+
+// Register module with write enable
+module register_we (
+    input clk,
+    input rst,
+    input n,          // Active low enable
+    input we,         // Write enable
+    input [7:0] d,    // Data input
+    output reg [7:0] q  // Data output
+);
+    always @(posedge clk or negedge rst) begin
+        if (!rst) q <= 8'b0;
+        else if (we) q <= d;
+    end
+endmodule

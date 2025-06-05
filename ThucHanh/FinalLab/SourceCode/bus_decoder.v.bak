@@ -1,0 +1,14 @@
+module bus_decoder (
+    input [31:0] bAddr,
+    output reg [4:0] bSel
+);
+    always @(*) begin
+        casez (bAddr[31:0])
+            32'h0000_????: bSel = 5'b00001; // Memory (RAM): 0x00000000 - 0x00003FFF
+            32'h0000_7f00: bSel = 5'b00010; // GPIO Input: 0x00007f00
+            32'h0000_7f04: bSel = 5'b00100; // GPIO Output: 0x00007f04
+            32'h0000_0710: bSel = 5'b01000; // PWM: 0x00000710
+            default: bSel = 5'b00000;       // No Slave selected
+        endcase
+    end
+endmodule

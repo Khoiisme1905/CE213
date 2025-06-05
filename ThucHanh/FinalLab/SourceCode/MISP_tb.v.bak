@@ -1,0 +1,63 @@
+`timescale 1ns/100ps // Don vi thoi gian: 1ns, do chinh xac: 100ps
+
+
+
+module MISP_tb;
+
+    // Inputs - Cac tin hieu dau vao
+    reg clk;   // Tin hieu clock
+    reg reset; // Tin hieu reset
+
+    // Outputs - Cac tin hieu dau ra de quan sat
+    wire [31:0] PC;         // Dia chi Program Counter
+    wire [31:0] Instr;      // Lenh duoc lay tu bo nho lenh
+    wire [31:0] ReadData;   // Du lieu doc tu bo nho du lieu
+    wire [31:0] WriteData;  // Du lieu ghi vao bo nho du lieu
+    wire [31:0] ALUResult;  // Ket qua tu ALU
+    wire ZeroFlag;          // Co zero tu ALU
+
+    // Khoi tao module can kiem tra (Unit Under Test - UUT)
+    MIPS_SCP uut (
+        .clk(clk),
+        .reset(reset),
+        .PC(PC),
+        .Instr(Instr),
+        .ReadData(ReadData),
+        .WriteData(WriteData),
+        .ALUResult(ALUResult),
+        .ZeroFlag(ZeroFlag)
+    );
+
+    // Tao clock voi chu ky 100ns (50ns moi canh)
+    initial begin
+        clk = 0; // Dat clock ban dau la 0
+    end
+    always #50 clk = ~clk; // Dao clock moi 50ns -> chu ky 100ns
+
+    // Mo phong chuong trinh
+    initial begin
+        // Tao file VCD de xem dang song trong mo phong
+        $dumpfile("dump.vcd");
+        $dumpvars(0, MIPS_SCP_tb);
+
+        // Khoi tao gia tri ban dau
+        clk = 0;   // Clock ban dau la 0
+        reset = 1; // Reset active high (giu reset trong 100ns)
+        #100;      // Cho 1 chu ky (100ns)
+
+        // Bo reset va chay 10 chu ky
+        reset = 0; // Bo reset
+        repeat (10) begin
+            #100; // Cho 1 chu ky (100ns)
+        end
+
+        // Mo rong mo phong them 20 chu ky de quan sat them
+        repeat (20) begin
+            #100; // Cho 1 chu ky (100ns)
+        end
+
+        // Ket thuc mo phong
+        $finish;
+    end
+
+endmodule

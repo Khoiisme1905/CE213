@@ -1,0 +1,88 @@
+module Datapath (
+    input clk,
+    input reset,
+    input RegDst,
+    input RegWrite,
+    input ALUSrc,
+    input Jump,
+    input MemtoReg,
+    input PCSrc,
+    input [3:0] ALUControl,
+    input [31:0] ReadData,
+    input [31:0] Instr,
+    output [31:0] PC,
+    output ZeroFlag,
+    output [31:0] WriteData,
+    output [31:0] ALUResult
+);
+    wire [31:0] PCNext, PCplus4, PCbeforeBranch, PCBranch;
+    wire [31:0] extendedimm, extendedimmafter, MUXresult, dataone, aluop2;
+    wire [4:0] writereg;
+
+    // PC
+    flopr_param #(32) PCregister (
+        .clk(clk),
+        .rst(reset),
+        .d(PCNext),
+        .q(PC)
+    );
+
+    // PC + 4
+    assign PCplus4 = PC + 32'd4;
+
+    // Sign Extend and Shift Left 2
+    signext immextention (
+        .a(Instr[15:0]),
+        .y(extendedimm)
+    );
+    sl2 shifteradd2 (
+        .a(extendedimm),
+        .y(extendedimmafter)
+    );
+
+    // Branch Target
+    assign PCbeforeBranch = PCplus4 + extendedimmafter;
+
+    // Branch Mux
+    wire [31:0] PCBranchIntermediate;
+    assign PCBranchIntermediate = PCSrc ? PCbeforeBranch : PCplus4;
+
+    // Jump Address Calculation
+    wire [31:0] jump_addr;
+    assign jump_addr = {PCplus4[31:28], Instr[25:0], 2'b00};
+
+    // Jump Mux
+    assign PCNext = Jump ? jump_addr : PCBranchIntermediate;
+
+    // Register File
+    registerfile32 RF (
+        .clk(clk),
+        .we(RegWrite),
+        .reset(reset),
+        .ra1(Instr[25:21]),
+        .ra2(Instr[20:16]),
+        .wa(writereg),
+        .wd(MUXresult),
+        .rd1(dataone),
+        .rd2(WriteData)
+    );
+
+    // Write Register Mux
+    assign writereg = RegDst ? Instr[15:11] : Instr[20:16];
+
+    // ALU Input Mux
+    assign aluop2 = ALUSrc ? extendedimm : WriteData;
+
+    // ALU
+    alu32 alucomp (
+        .a(dataone),
+        .b(aluop2),
+        .f(ALUControl),
+        .shamt(Instr[10:6]),
+        .y(ALUResult),
+        .zero(ZeroFlag)
+    );
+
+    // Result Mux
+    assign MUXresult = MemtoReg ? ReadData : ALUResult;
+endmodule

@@ -1,0 +1,51 @@
+module gpio (
+    input clk,
+    input rst,
+    input [31:0] bAddr,
+    input bWrite,
+    input [4:0] bSel,
+    input [31:0] bWData,
+    output reg [31:0] bRData,
+    input [15:0] gpioIn,
+    output reg [15:0] gpioOut
+);
+    // Enable write signal for gpioOut
+    wire gpioOutWe;
+    assign gpioOutWe = bSel[2] & bWrite & (bAddr[3:0] == 4'h4); // bSel[2] for GPIO Output (0x00007f04)
+
+    // Register for write enable
+    register_we we_reg (
+        .clk(clk),
+        .rst(rst),
+        .n(~gpioOutWe),
+        .we(gpioOutWe),
+        .d(bWData[15:0]),
+        .q(gpioOut)
+    );
+
+    // Read logic
+    always @(*) begin
+        case (bAddr[3:0])
+            4'h0: bRData = 32'b0;                    // Default (no data)
+            4'h1: bRData = {16'b0, gpioIn};          // Read GPIO Input
+            4'h4: bRData = {16'b0, gpioOut};         // Read GPIO Output
+            default: bRData = 32'b0;
+        endcase
+    end
+
+endmodule
+
+// Register module with write enable
+module register_we (
+    input clk,
+    input rst,
+    input n,          // Active low enable
+    input we,         // Write enable
+    input [15:0] d,   // Data input
+    output reg [15:0] q  // Data output
+);
+    always @(posedge clk or negedge rst) begin
+        if (!rst) q <= 16'b0;
+        else if (we) q <= d;
+    end
+endmodule

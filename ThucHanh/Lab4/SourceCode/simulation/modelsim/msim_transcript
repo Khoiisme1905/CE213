@@ -1,0 +1,51 @@
+# Reading C:/App/altera/13.0sp1/modelsim_ase/tcl/vsim/pref.tcl 
+# do lab4_run_msim_rtl_verilog.do 
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Copying C:\App\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied C:\App\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vlog -vlog01compat -work work +incdir+C:/HK2_24-25/HDL/TH/LAB_4/LAB_04 {C:/HK2_24-25/HDL/TH/LAB_4/LAB_04/mux2to1_32bit.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module mux2to1_32bit
+# 
+# Top level modules:
+# 	mux2to1_32bit
+# 
+# vlog -vlog01compat -work work +incdir+C:/HK2_24-25/HDL/TH/LAB_4/LAB_04 {C:/HK2_24-25/HDL/TH/LAB_4/LAB_04/mux2to1_32bit_tb.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module mux2to1_32bit_tb
+# 
+# Top level modules:
+# 	mux2to1_32bit_tb
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneii_ver -L rtl_work -L work -voptargs="+acc"  mux2to1_32bit_tb
+# vsim -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneii_ver -L rtl_work -L work -voptargs=\"+acc\" -t 1ps mux2to1_32bit_tb 
+# Loading work.mux2to1_32bit_tb
+# Loading work.mux2to1_32bit
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+# Time	Sel	A		B		Out
+# 10ns	0	aaaaaaaa	55555555	aaaaaaaa
+# 20ns	1	aaaaaaaa	55555555	55555555
+# 30ns	0	12345678	87654321	12345678
+# 40ns	1	12345678	87654321	87654321
+# 50ns	0	12153524	c0895e81	12153524
+# 60ns	1	12153524	c0895e81	c0895e81
+# ** Note: $finish    : C:/HK2_24-25/HDL/TH/LAB_4/LAB_04/mux2to1_32bit_tb.v(53)
+#    Time: 60 ns  Iteration: 0  Instance: /mux2to1_32bit_tb
+# 1
+# Break in Module mux2to1_32bit_tb at C:/HK2_24-25/HDL/TH/LAB_4/LAB_04/mux2to1_32bit_tb.v line 53
+# Simulation Breakpoint: 1
+# Break in Module mux2to1_32bit_tb at C:/HK2_24-25/HDL/TH/LAB_4/LAB_04/mux2to1_32bit_tb.v line 53
+# MACRO ./lab4_run_msim_rtl_verilog.do PAUSED at line 17

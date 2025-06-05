@@ -1,0 +1,18 @@
+module ram (
+    input clk,
+    input we,
+    input [31:0] adr,
+    input [31:0] din,
+    output [31:0] dout
+);
+    parameter depth = 128;
+    parameter bits = 32;
+    parameter width = 32;
+
+    reg [width-1:0] Dmem [depth-1:0];
+    assign dout = Dmem[adr >> 2]; // Sửa: chia địa chỉ cho 4 (word-aligned)
+
+    always @(posedge clk) begin
+        if (we) Dmem[adr >> 2] <= din;
+    end
+endmodule

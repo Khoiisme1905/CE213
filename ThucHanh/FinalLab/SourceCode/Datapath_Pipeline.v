@@ -1,0 +1,282 @@
+
+module Datapath_Pipeline (
+    input clk,
+    input reset,
+    // Control inputs (from Control Unit)
+    input RegDst, RegWrite, ALUSrc, Jump, MemtoReg, PCSrc,
+    input [3:0] ALUControl,
+    // Memory interface (to/from bus)
+    output [31:0] MemAddr,      // Address from ALUResult
+    output [31:0] WriteData,    // Data to write
+    output MemRead,             // Read signal
+    output MemWrite,            // Write signal
+    // Instruction interface (from rom_inst_rom)
+    input [31:0] Instr,
+    // Outputs
+    output [31:0] PC,
+    output ZeroFlag,
+    output [31:0] ALUResult,
+    input [31:0] ReadData       // Data read from bus
+);
+
+    // ===== WIRE DECLARATIONS =====
+    // IF Stage
+    wire [31:0] PC_IF, PCNext_IF, PCPlus4_IF, Instr_IF;
+    wire PCWrite, IF_IDWrite;
+    
+    // ID Stage  
+    wire [31:0] PC_ID, Instr_ID;
+    wire [31:0] ReadData1_ID, ReadData2_ID, SignImm_ID;
+    wire [4:0] Rs_ID, Rt_ID, Rd_ID;
+    wire RegWrite_ID, MemtoReg_ID, MemWrite_ID, ALUSrc_ID, RegDst_ID;
+    wire Branch_ID, Jump_ID;
+    wire [3:0] ALUControl_ID;
+    wire Stall, ID_EXFlush;
+    
+    // EX Stage
+    wire [31:0] PC_EX, ReadData1_EX, ReadData2_EX, SignImm_EX;
+    wire [31:0] ALUOut_EX, ALUSrcA_EX, ALUSrcB_EX, WriteData_EX;
+    wire [4:0] Rs_EX, Rt_EX, Rd_EX, Shamt_EX, WriteReg_EX;
+    wire RegWrite_EX, MemtoReg_EX, MemWrite_EX, ALUSrc_EX, RegDst_EX;
+    wire Branch_EX, Jump_EX, Zero_EX;
+    wire [3:0] ALUControl_EX;
+    wire [1:0] ForwardA, ForwardB;
+    wire [31:0] BranchTarget_EX;
+    
+    // MEM Stage
+    wire [31:0] BranchTarget_MEM, ALUResult_MEM, WriteData_MEM;
+    wire [4:0] WriteReg_MEM;
+    wire RegWrite_MEM, MemtoReg_MEM, MemWrite_MEM, Branch_MEM, Zero_MEM;
+    
+    // WB Stage
+    wire [31:0] ReadData_WB, ALUResult_WB, Result_WB;
+    wire [4:0] WriteReg_WB;
+    wire RegWrite_WB, MemtoReg_WB;
+
+    // ===== IF STAGE =====
+    assign PC = PC_IF;
+    assign Instr_IF = Instr;
+    
+    // PC Logic
+    flopr_param #(32) PC_reg (
+        .clk(clk),
+        .rst(reset),
+        .d(PCNext_IF),
+        .q(PC_IF)
+    );
+    
+    assign PCPlus4_IF = PC_IF + 32'd4;
+    
+    // PC Source Mux
+    wire PCSrc_actual = Branch_MEM & Zero_MEM;
+    wire [31:0] jump_addr = {PCPlus4_IF[31:28], Instr_ID[25:0], 2'b00};
+    assign PCNext_IF = PCSrc_actual ? BranchTarget_MEM :
+                       Jump_ID ? jump_addr : PCPlus4_IF;
+
+    // ===== IF/ID PIPELINE REGISTER =====
+    IF_ID_Register IF_ID_reg (
+        .clk(clk),
+        .reset(reset),
+        .stall(~IF_IDWrite),
+        .flush(PCSrc_actual || Jump_ID),
+        .PC_in(PCPlus4_IF),
+        .Instr_in(Instr_IF),
+        .PC_out(PC_ID),
+        .Instr_out(Instr_ID)
+    );
+
+    // ===== ID STAGE =====
+    assign Rs_ID = Instr_ID[25:21];
+    assign Rt_ID = Instr_ID[20:16]; 
+    assign Rd_ID = Instr_ID[15:11];
+    
+    // Control Unit
+    Controlunit control (
+        .Opcode(Instr_ID[31:26]),
+        .Func(Instr_ID[5:0]),
+        .Zero(1'b0), // Not used in ID stage
+        .RegWrite(RegWrite_ID),
+        .MemtoReg(MemtoReg_ID),
+        .ALUSrc(ALUSrc_ID),
+        .RegDst(RegDst_ID),
+        .Jump(Jump_ID),
+        .PCSrc(PCSrc),
+        .ALUControl(ALUControl_ID)
+    );
+    
+    // Branch detection
+    assign Branch_ID = (Instr_ID[31:26] == 6'b000100) || (Instr_ID[31:26] == 6'b000101);
+    
+    // Register File
+    registerfile32 regfile (
+        .clk(clk),
+        .we(RegWrite_WB),
+        .reset(reset),
+        .ra1(Rs_ID),
+        .ra2(Rt_ID),
+        .wa(WriteReg_WB),
+        .wd(Result_WB),
+        .rd1(ReadData1_ID),
+        .rd2(ReadData2_ID)
+    );
+    
+    // Sign Extend
+    signext sign_extend (
+        .a(Instr_ID[15:0]),
+        .y(SignImm_ID)
+    );
+    
+    // Hazard Detection
+    HazardUnit hazard_unit (
+        .Rs_ID(Rs_ID),
+        .Rt_ID(Rt_ID),
+        .Rt_EX(Rt_EX),
+        .MemRead_EX(MemtoReg_EX), // MemRead = MemtoReg for load
+        .Branch_ID(Branch_ID),
+        .Jump_ID(Jump_ID),
+        .Stall(Stall),
+        .PCWrite(PCWrite),
+        .IF_IDWrite(IF_IDWrite)
+    );
+    
+    assign ID_EXFlush = Stall;
+
+    // ===== ID/EX PIPELINE REGISTER =====
+    ID_EX_Register ID_EX_reg (
+        .clk(clk),
+        .reset(reset),
+        .flush(ID_EXFlush),
+        .RegWrite_in(RegWrite_ID),
+        .MemtoReg_in(MemtoReg_ID),
+        .MemWrite_in(MemWrite_ID),
+        .ALUSrc_in(ALUSrc_ID),
+        .RegDst_in(RegDst_ID),
+        .Branch_in(Branch_ID),
+        .Jump_in(Jump_ID),
+        .ALUControl_in(ALUControl_ID),
+        .PC_in(PC_ID),
+        .ReadData1_in(ReadData1_ID),
+        .ReadData2_in(ReadData2_ID),
+        .SignImm_in(SignImm_ID),
+        .Rs_in(Rs_ID),
+        .Rt_in(Rt_ID),
+        .Rd_in(Rd_ID),
+        .Shamt_in(Instr_ID[10:6]),
+        .RegWrite_out(RegWrite_EX),
+        .MemtoReg_out(MemtoReg_EX),
+        .MemWrite_out(MemWrite_EX),
+        .ALUSrc_out(ALUSrc_EX),
+        .RegDst_out(RegDst_EX),
+        .Branch_out(Branch_EX),
+        .Jump_out(Jump_EX),
+        .ALUControl_out(ALUControl_EX),
+        .PC_out(PC_EX),
+        .ReadData1_out(ReadData1_EX),
+        .ReadData2_out(ReadData2_EX),
+        .SignImm_out(SignImm_EX),
+        .Rs_out(Rs_EX),
+        .Rt_out(Rt_EX),
+        .Rd_out(Rd_EX),
+        .Shamt_out(Shamt_EX)
+    );
+
+    // ===== EX STAGE =====
+    // Write Register Mux
+    assign WriteReg_EX = RegDst_EX ? Rd_EX : Rt_EX;
+    
+    // Forwarding Unit
+    ForwardingUnit forward_unit (
+        .Rs_EX(Rs_EX),
+        .Rt_EX(Rt_EX),
+        .WriteReg_MEM(WriteReg_MEM),
+        .WriteReg_WB(WriteReg_WB),
+        .RegWrite_MEM(RegWrite_MEM),
+        .RegWrite_WB(RegWrite_WB),
+        .ForwardA(ForwardA),
+        .ForwardB(ForwardB)
+    );
+    
+    // ALU Input Forwarding Mux
+    assign ALUSrcA_EX = (ForwardA == 2'b00) ? ReadData1_EX :
+                        (ForwardA == 2'b01) ? Result_WB : ALUResult_MEM;
+    
+    assign WriteData_EX = (ForwardB == 2'b00) ? ReadData2_EX :
+                          (ForwardB == 2'b01) ? Result_WB : ALUResult_MEM;
+    
+    assign ALUSrcB_EX = ALUSrc_EX ? SignImm_EX : WriteData_EX;
+    
+    // ALU
+    alu32 alu (
+        .a(ALUSrcA_EX),
+        .b(ALUSrcB_EX),
+        .f(ALUControl_EX),
+        .shamt(Shamt_EX),
+        .y(ALUOut_EX),
+        .zero(Zero_EX)
+    );
+    
+    // Branch Target Calculation
+    wire [31:0] SignImm_shifted;
+    sl2 branch_shift (
+        .a(SignImm_EX),
+        .y(SignImm_shifted)
+    );
+    assign BranchTarget_EX = PC_EX + SignImm_shifted;
+
+    // ===== EX/MEM PIPELINE REGISTER =====
+    EX_MEM_Register EX_MEM_reg (
+        .clk(clk),
+        .reset(reset),
+        .RegWrite_in(RegWrite_EX),
+        .MemtoReg_in(MemtoReg_EX),
+        .MemWrite_in(MemWrite_EX),
+        .Branch_in(Branch_EX),
+        .BranchTarget_in(BranchTarget_EX),
+        .ALUResult_in(ALUOut_EX),
+        .WriteData_in(WriteData_EX),
+        .WriteReg_in(WriteReg_EX),
+        .Zero_in(Zero_EX),
+        .RegWrite_out(RegWrite_MEM),
+        .MemtoReg_out(MemtoReg_MEM),
+        .MemWrite_out(MemWrite_MEM),
+        .Branch_out(Branch_MEM),
+        .BranchTarget_out(BranchTarget_MEM),
+        .ALUResult_out(ALUResult_MEM),
+        .WriteData_out(WriteData_MEM),
+        .WriteReg_out(WriteReg_MEM),
+        .Zero_out(Zero_MEM)
+    );
+
+    // ===== MEM STAGE =====
+    // Outputs to bus
+    assign MemAddr = ALUResult_MEM;
+    assign WriteData = WriteData_MEM;
+    assign MemRead = MemtoReg_MEM; // MemRead khi load (lw)
+    assign MemWrite = MemWrite_MEM; // MemWrite khi store (sw)
+
+    // Output ALUResult
+    assign ALUResult = ALUResult_MEM;
+
+    // ===== MEM/WB PIPELINE REGISTER =====
+    MEM_WB_Register MEM_WB_reg (
+        .clk(clk),
+        .reset(reset),
+        .RegWrite_in(RegWrite_MEM),
+        .MemtoReg_in(MemtoReg_MEM),
+        .ReadData_in(ReadData),
+        .ALUResult_in(ALUResult_MEM),
+        .WriteReg_in(WriteReg_MEM),
+        .RegWrite_out(RegWrite_WB),
+        .MemtoReg_out(MemtoReg_WB),
+        .ReadData_out(ReadData_WB),
+        .ALUResult_out(ALUResult_WB),
+        .WriteReg_out(WriteReg_WB)
+    );
+
+    // ===== WB STAGE =====
+    assign Result_WB = MemtoReg_WB ? ReadData_WB : ALUResult_WB;
+    
+    // Output ZeroFlag from MEM stage
+    assign ZeroFlag = Zero_MEM;
+
+endmodule

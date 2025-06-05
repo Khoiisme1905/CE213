@@ -1,0 +1,96 @@
+module Top (
+    input clk,
+    input reset,
+    input [15:0] gpioIn,
+    output [15:0] gpioOut,
+    output pwmOut
+);
+    // Wires for Datapath
+    wire [31:0] PC, WriteData, ALUResult, ReadData;
+    wire ZeroFlag;
+    wire [31:0] Instr; // Instruction from rom_inst_rom
+    wire MemRead, MemWrite; // Control signals (simplified)
+
+    // Bus signals
+    wire [4:0] bSel;
+    wire [31:0] slave_addr, slave_data_write;
+    wire slave_read, slave_write;
+    wire [31:0] memory_data, gpio_in_data, gpio_out_data, pwm_data;
+
+    // Datapath instance (simplified, assuming 5-stage pipeline)
+    Datapath datapath (
+        .clk(clk),
+        .reset(reset),
+        .Instr(Instr),
+        .ReadData(ReadData),
+        .PC(PC),
+        .ALUResult(ALUResult),
+        .WriteData(WriteData),
+        .ZeroFlag(ZeroFlag),
+        .MemRead(MemRead),  // From Control Unit
+        .MemWrite(MemWrite) // From Control Unit
+    );
+
+    // Instruction Memory (rom_inst_rom)
+    rom_inst_rom inst_mem (
+        .adr(PC[7:2]), // PC/4 to address 64 words
+        .dout(Instr)
+    );
+
+    // Bus instance
+    bus bus_inst (
+        .clk(clk),
+        .reset(reset),
+        .cpu_addr(ALUResult),
+        .cpu_data_write(WriteData),
+        .cpu_read(MemRead),
+        .cpu_write(MemWrite),
+        .cpu_data_read(ReadData),
+        .bSel(bSel),
+        .slave_addr(slave_addr),
+        .slave_data_write(slave_data_write),
+        .slave_read(slave_read),
+        .slave_write(slave_write),
+        .memory_data(memory_data),
+        .gpio_in(gpio_in_data),
+        .gpio_out(gpio_out_data),
+        .pwm_data(pwm_data)
+    );
+
+    // Data Memory (RAM)
+    ram data_mem (
+        .clk(clk),
+        .we(slave_write & (bSel == 5'b00001)),
+        .adr(slave_addr[7:2]), // Assuming 64-word RAM
+        .din(slave_data_write),
+        .dout(memory_data)
+    );
+
+    // GPIO instance
+    gpio gpio_inst (
+        .clk(clk),
+        .rst(reset),
+        .bAddr(slave_addr),
+        .bWrite(slave_write),
+        .bSel(bSel),
+        .bWData(slave_data_write),
+        .bRData(gpio_in_data), // For Input
+        .gpioIn(gpioIn),
+        .gpioOut(gpioOut)
+    );
+
+    // Connect GPIO Output data
+    assign gpio_out_data = {16'b0, gpioOut};
+
+    // PWM instance
+    pwm pwm_inst (
+        .clk(clk),
+        .rst(reset),
+        .bSel(bSel),
+        .bWrite(slave_write),
+        .bWData(slave_data_write),
+        .bRData(pwm_data),
+        .pwmOut(pwmOut)
+    );
+
+endmodule

@@ -1,0 +1,14 @@
+timescale 1ns/100ps;
+module Lab2_22520696_DuongAnhKhoi_Tester();
+	reg [2:0] loaddata,
+	reg loadEn,
+	reg clk;
+	wire [2:0] count;
+	initial begin
+		loaddata = 0; #5 loaddata = 1; #115 loaddata = 0;
+		#760 $stop;
+	end
+	always #26.5 clk = ~clk;
+	Lab2_22520696_DuongAnhKhoi_U1(loaddata, loadEn, clk, count);
+endmodule
+	
