@@ -1,0 +1,206 @@
+# Reading E:/ModelSim/modelsim_ase/tcl/vsim/pref.tcl
+# do LIFO_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
+# vmap work rtl_work 
+# Copying E:/ModelSim/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+E:/CE213_HDL/LIFO {E:/CE213_HDL/LIFO/LIFO.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 14:51:11 on Apr 14,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/CE213_HDL/LIFO" E:/CE213_HDL/LIFO/LIFO.v 
+# -- Compiling module LIFO
+# 
+# Top level modules:
+# 	LIFO
+# End time: 14:51:11 on Apr 14,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vlog -vlog01compat -work work +incdir+E:/CE213_HDL/LIFO {E:/CE213_HDL/LIFO/TB.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 14:51:11 on Apr 14,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+E:/CE213_HDL/LIFO" E:/CE213_HDL/LIFO/TB.v 
+# -- Compiling module TB
+# 
+# Top level modules:
+# 	TB
+# End time: 14:51:11 on Apr 14,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneii_ver -L rtl_work -L work -voptargs="+acc"  TB
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneii_ver -L rtl_work -L work -voptargs=""+acc"" TB 
+# Start time: 14:51:11 on Apr 14,2025
+# Loading work.TB
+# ** Error (suppressible): (vsim-19) Failed to access library 'cycloneii_ver' at "cycloneii_ver".
+# No such file or directory. (errno = ENOENT)
+# Loading work.LIFO
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+# Test 1: w_en=0, r_en=0, data_in=00000000, data_out=zzzzzzzz, full=0, empty=1
+# Test 2: w_en=1, r_en=0, data_in=b0000000, data_out=zzzzzzzz, full=0, empty=0
+# ERROR at test 3: empty = 0, expected = 1
+# Test 3: w_en=0, r_en=1, data_in=00000000, data_out=b0000000, full=0, empty=0
+# Test 4: w_en=1, r_en=0, data_in=b0000000, data_out=b0000000, full=0, empty=0
+# Test 5: w_en=1, r_en=0, data_in=b0000001, data_out=b0000000, full=0, empty=0
+# Test 6: w_en=1, r_en=0, data_in=b0000002, data_out=b0000000, full=0, empty=0
+# Test 7: w_en=1, r_en=0, data_in=b0000003, data_out=b0000000, full=0, empty=0
+# Test 8: w_en=1, r_en=0, data_in=b0000004, data_out=b0000000, full=0, empty=0
+# Test 9: w_en=0, r_en=1, data_in=00000000, data_out=b0000004, full=0, empty=0
+# Test 10: w_en=0, r_en=1, data_in=00000000, data_out=b0000003, full=0, empty=0
+# Test 11: w_en=0, r_en=1, data_in=00000000, data_out=b0000002, full=0, empty=0
+# Test 12: w_en=0, r_en=1, data_in=00000000, data_out=b0000001, full=0, empty=0
+# ERROR at test 13: empty = 0, expected = 1
+# Test 13: w_en=0, r_en=1, data_in=00000000, data_out=b0000000, full=0, empty=0
+# Test 14: w_en=1, r_en=0, data_in=b0000000, data_out=b0000000, full=0, empty=0
+# Test 15: w_en=1, r_en=0, data_in=b0000001, data_out=b0000000, full=0, empty=0
+# Test 16: w_en=1, r_en=0, data_in=b0000002, data_out=b0000000, full=0, empty=0
+# Test 17: w_en=1, r_en=0, data_in=b0000003, data_out=b0000000, full=0, empty=0
+# Test 18: w_en=1, r_en=0, data_in=b0000004, data_out=b0000000, full=0, empty=0
+# Test 19: w_en=1, r_en=0, data_in=b0000005, data_out=b0000000, full=0, empty=0
+# Test 20: w_en=1, r_en=0, data_in=b0000006, data_out=b0000000, full=0, empty=0
+# Test 21: w_en=1, r_en=0, data_in=b0000007, data_out=b0000000, full=0, empty=0
+# Test 22: w_en=1, r_en=0, data_in=b0000008, data_out=b0000000, full=0, empty=0
+# Test 23: w_en=1, r_en=0, data_in=b0000009, data_out=b0000000, full=0, empty=0
+# Test 24: w_en=1, r_en=0, data_in=b000000a, data_out=b0000000, full=0, empty=0
+# Test 25: w_en=1, r_en=0, data_in=b000000b, data_out=b0000000, full=0, empty=0
+# Test 26: w_en=1, r_en=0, data_in=b000000c, data_out=b0000000, full=0, empty=0
+# Test 27: w_en=1, r_en=0, data_in=b000000d, data_out=b0000000, full=0, empty=0
+# Test 28: w_en=1, r_en=0, data_in=b000000e, data_out=b0000000, full=0, empty=0
+# Test 29: w_en=1, r_en=0, data_in=b000000f, data_out=b0000000, full=0, empty=0
+# ERROR at test 30: full = 1, expected = 0
+# Test 30: w_en=1, r_en=0, data_in=b0000010, data_out=b0000000, full=1, empty=0
+# ERROR at test 31: full = 1, expected = 0
+# Test 31: w_en=1, r_en=0, data_in=b0000011, data_out=b0000000, full=1, empty=0
+# ERROR at test 32: full = 1, expected = 0
+# Test 32: w_en=1, r_en=0, data_in=b0000012, data_out=b0000000, full=1, empty=0
+# ERROR at test 33: full = 1, expected = 0
+# Test 33: w_en=1, r_en=0, data_in=b0000013, data_out=b0000000, full=1, empty=0
+# ERROR at test 34: full = 1, expected = 0
+# Test 34: w_en=1, r_en=0, data_in=b0000014, data_out=b0000000, full=1, empty=0
+# ERROR at test 35: full = 1, expected = 0
+# Test 35: w_en=1, r_en=0, data_in=b0000015, data_out=b0000000, full=1, empty=0
+# ERROR at test 36: full = 1, expected = 0
+# Test 36: w_en=1, r_en=0, data_in=b0000016, data_out=b0000000, full=1, empty=0
+# ERROR at test 37: full = 1, expected = 0
+# Test 37: w_en=1, r_en=0, data_in=b0000017, data_out=b0000000, full=1, empty=0
+# ERROR at test 38: full = 1, expected = 0
+# Test 38: w_en=1, r_en=0, data_in=b0000018, data_out=b0000000, full=1, empty=0
+# ERROR at test 39: full = 1, expected = 0
+# Test 39: w_en=1, r_en=0, data_in=b0000019, data_out=b0000000, full=1, empty=0
+# ERROR at test 40: full = 1, expected = 0
+# Test 40: w_en=1, r_en=0, data_in=b000001a, data_out=b0000000, full=1, empty=0
+# ERROR at test 41: full = 1, expected = 0
+# Test 41: w_en=1, r_en=0, data_in=b000001b, data_out=b0000000, full=1, empty=0
+# ERROR at test 42: full = 1, expected = 0
+# Test 42: w_en=1, r_en=0, data_in=b000001c, data_out=b0000000, full=1, empty=0
+# ERROR at test 43: full = 1, expected = 0
+# Test 43: w_en=1, r_en=0, data_in=b000001d, data_out=b0000000, full=1, empty=0
+# ERROR at test 44: full = 1, expected = 0
+# Test 44: w_en=1, r_en=0, data_in=b000001e, data_out=b0000000, full=1, empty=0
+# Test 45: w_en=1, r_en=0, data_in=b000001f, data_out=b0000000, full=1, empty=0
+# Test 46: w_en=1, r_en=0, data_in=ffffffff, data_out=b0000000, full=1, empty=0
+# ERROR at test 47: data_out = b000000f, expected = b000001f
+# Test 47: w_en=0, r_en=1, data_in=00000000, data_out=b000000f, full=0, empty=0
+# ERROR at test 48: data_out = b000000e, expected = b000001e
+# Test 48: w_en=0, r_en=1, data_in=00000000, data_out=b000000e, full=0, empty=0
+# ERROR at test 49: data_out = b000000d, expected = b000001d
+# Test 49: w_en=0, r_en=1, data_in=00000000, data_out=b000000d, full=0, empty=0
+# ERROR at test 50: data_out = b000000c, expected = b000001c
+# Test 50: w_en=0, r_en=1, data_in=00000000, data_out=b000000c, full=0, empty=0
+# ERROR at test 51: data_out = b000000b, expected = b000001b
+# Test 51: w_en=0, r_en=1, data_in=00000000, data_out=b000000b, full=0, empty=0
+# ERROR at test 52: data_out = b000000a, expected = b000001a
+# Test 52: w_en=0, r_en=1, data_in=00000000, data_out=b000000a, full=0, empty=0
+# ERROR at test 53: data_out = b0000009, expected = b0000019
+# Test 53: w_en=0, r_en=1, data_in=00000000, data_out=b0000009, full=0, empty=0
+# ERROR at test 54: data_out = b0000008, expected = b0000018
+# Test 54: w_en=0, r_en=1, data_in=00000000, data_out=b0000008, full=0, empty=0
+# ERROR at test 55: data_out = b0000007, expected = b0000017
+# Test 55: w_en=0, r_en=1, data_in=00000000, data_out=b0000007, full=0, empty=0
+# ERROR at test 56: data_out = b0000006, expected = b0000016
+# Test 56: w_en=0, r_en=1, data_in=00000000, data_out=b0000006, full=0, empty=0
+# ERROR at test 57: data_out = b0000005, expected = b0000015
+# Test 57: w_en=0, r_en=1, data_in=00000000, data_out=b0000005, full=0, empty=0
+# ERROR at test 58: data_out = b0000004, expected = b0000014
+# Test 58: w_en=0, r_en=1, data_in=00000000, data_out=b0000004, full=0, empty=0
+# ERROR at test 59: data_out = b0000003, expected = b0000013
+# Test 59: w_en=0, r_en=1, data_in=00000000, data_out=b0000003, full=0, empty=0
+# ERROR at test 60: data_out = b0000002, expected = b0000012
+# Test 60: w_en=0, r_en=1, data_in=00000000, data_out=b0000002, full=0, empty=0
+# ERROR at test 61: data_out = b0000001, expected = b0000011
+# Test 61: w_en=0, r_en=1, data_in=00000000, data_out=b0000001, full=0, empty=0
+# ERROR at test 62: data_out = b0000000, expected = b0000010
+# Test 62: w_en=0, r_en=1, data_in=00000000, data_out=b0000000, full=0, empty=0
+# ERROR at test 63: empty = 1, expected = 0
+# ERROR at test 63: data_out = b0000000, expected = b000000f
+# Test 63: w_en=0, r_en=1, data_in=00000000, data_out=b0000000, full=0, empty=1
+# ERROR at test 64: empty = 1, expected = 0
+# ERROR at test 64: data_out = b0000000, expected = b000000e
+# Test 64: w_en=0, r_en=1, data_in=00000000, data_out=b0000000, full=0, empty=1
+# ERROR at test 65: empty = 1, expected = 0
+# ERROR at test 65: data_out = b0000000, expected = b000000d
+# Test 65: w_en=0, r_en=1, data_in=00000000, data_out=b0000000, full=0, empty=1
+# ERROR at test 66: empty = 1, expected = 0
+# ERROR at test 66: data_out = b0000000, expected = b000000c
+# Test 66: w_en=0, r_en=1, data_in=00000000, data_out=b0000000, full=0, empty=1
+# ERROR at test 67: empty = 1, expected = 0
+# ERROR at test 67: data_out = b0000000, expected = b000000b
+# Test 67: w_en=0, r_en=1, data_in=00000000, data_out=b0000000, full=0, empty=1
+# ERROR at test 68: empty = 1, expected = 0
+# ERROR at test 68: data_out = b0000000, expected = b000000a
+# Test 68: w_en=0, r_en=1, data_in=00000000, data_out=b0000000, full=0, empty=1
+# ERROR at test 69: empty = 1, expected = 0
+# ERROR at test 69: data_out = b0000000, expected = b0000009
+# Test 69: w_en=0, r_en=1, data_in=00000000, data_out=b0000000, full=0, empty=1
+# ERROR at test 70: empty = 1, expected = 0
+# ERROR at test 70: data_out = b0000000, expected = b0000008
+# Test 70: w_en=0, r_en=1, data_in=00000000, data_out=b0000000, full=0, empty=1
+# ERROR at test 71: empty = 1, expected = 0
+# ERROR at test 71: data_out = b0000000, expected = b0000007
+# Test 71: w_en=0, r_en=1, data_in=00000000, data_out=b0000000, full=0, empty=1
+# ERROR at test 72: empty = 1, expected = 0
+# ERROR at test 72: data_out = b0000000, expected = b0000006
+# Test 72: w_en=0, r_en=1, data_in=00000000, data_out=b0000000, full=0, empty=1
+# ERROR at test 73: empty = 1, expected = 0
+# ERROR at test 73: data_out = b0000000, expected = b0000005
+# Test 73: w_en=0, r_en=1, data_in=00000000, data_out=b0000000, full=0, empty=1
+# ERROR at test 74: empty = 1, expected = 0
+# ERROR at test 74: data_out = b0000000, expected = b0000004
+# Test 74: w_en=0, r_en=1, data_in=00000000, data_out=b0000000, full=0, empty=1
+# ERROR at test 75: empty = 1, expected = 0
+# ERROR at test 75: data_out = b0000000, expected = b0000003
+# Test 75: w_en=0, r_en=1, data_in=00000000, data_out=b0000000, full=0, empty=1
+# ERROR at test 76: empty = 1, expected = 0
+# ERROR at test 76: data_out = b0000000, expected = b0000002
+# Test 76: w_en=0, r_en=1, data_in=00000000, data_out=b0000000, full=0, empty=1
+# ERROR at test 77: empty = 1, expected = 0
+# ERROR at test 77: data_out = b0000000, expected = b0000001
+# Test 77: w_en=0, r_en=1, data_in=00000000, data_out=b0000000, full=0, empty=1
+# Test 78: w_en=0, r_en=1, data_in=00000000, data_out=b0000000, full=0, empty=1
+# Test 79: w_en=0, r_en=1, data_in=00000000, data_out=b0000000, full=0, empty=1
+# Test 80: w_en=1, r_en=0, data_in=b0000000, data_out=b0000000, full=0, empty=0
+# Test 81: w_en=1, r_en=0, data_in=b0000001, data_out=b0000000, full=0, empty=0
+# Test 82: w_en=1, r_en=0, data_in=b0000002, data_out=b0000000, full=0, empty=0
+# Test 83: w_en=1, r_en=1, data_in=b000000a, data_out=b0000000, full=0, empty=0
+# Test 84: w_en=0, r_en=1, data_in=00000000, data_out=b000000a, full=0, empty=0
+# Test 85: w_en=0, r_en=1, data_in=00000000, data_out=b0000002, full=0, empty=0
+# Test 86: w_en=0, r_en=1, data_in=00000000, data_out=b0000001, full=0, empty=0
+# ERROR at test 87: empty = 0, expected = 1
+# Test 87: w_en=0, r_en=1, data_in=00000000, data_out=b0000000, full=0, empty=0
+# 64 out of 87 tests FAILED!
+# ** Note: $finish    : E:/CE213_HDL/LIFO/TB.v(168)
+#    Time: 1836 ns  Iteration: 0  Instance: /TB
+# 1
+# Break in Module TB at E:/CE213_HDL/LIFO/TB.v line 168
+# End time: 14:57:03 on Apr 14,2025, Elapsed time: 0:05:52
+# Errors: 1, Warnings: 0

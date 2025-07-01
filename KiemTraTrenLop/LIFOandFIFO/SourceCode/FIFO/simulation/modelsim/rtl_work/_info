@@ -1,0 +1,56 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dE:/CE213_HDL/FIFO/simulation/modelsim
+vFIFO
+Z1 !s110 1744616737
+!i10b 1
+!s100 ^Cd>fN@[LG1^40dmP_5k71
+IE0HbEnRTBh52X?T0TU?lP3
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1744614464
+8E:/CE213_HDL/FIFO/FIFO.v
+FE:/CE213_HDL/FIFO/FIFO.v
+L0 1
+Z3 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z4 !s108 1744616737.000000
+!s107 E:/CE213_HDL/FIFO/FIFO.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/CE213_HDL/FIFO|E:/CE213_HDL/FIFO/FIFO.v|
+!i113 1
+Z5 o-vlog01compat -work work
+Z6 !s92 -vlog01compat -work work +incdir+E:/CE213_HDL/FIFO
+Z7 tCvgOpt 0
+n@f@i@f@o
+vTB
+R1
+!i10b 1
+!s100 ;ob`1CCfk?>cR<49jUBJU1
+I8CX^dORKNTa;TKaCD:MP51
+R2
+R0
+w1744616709
+8E:/CE213_HDL/FIFO/TB.v
+FE:/CE213_HDL/FIFO/TB.v
+L0 3
+R3
+r1
+!s85 0
+31
+R4
+!s107 E:/CE213_HDL/FIFO/TB.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/CE213_HDL/FIFO|E:/CE213_HDL/FIFO/TB.v|
+!i113 1
+R5
+R6
+R7
+n@t@b

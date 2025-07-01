@@ -1,0 +1,56 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dE:/CE213_HDL/LIFO/simulation/modelsim
+vLIFO
+Z1 !s110 1744617071
+!i10b 1
+!s100 H:W:NVZODND:Dz9DbV4JE0
+IOaXi>lPKYD3YNMg2=Lbk63
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1744614678
+8E:/CE213_HDL/LIFO/LIFO.v
+FE:/CE213_HDL/LIFO/LIFO.v
+L0 1
+Z3 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z4 !s108 1744617071.000000
+!s107 E:/CE213_HDL/LIFO/LIFO.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/CE213_HDL/LIFO|E:/CE213_HDL/LIFO/LIFO.v|
+!i113 1
+Z5 o-vlog01compat -work work
+Z6 !s92 -vlog01compat -work work +incdir+E:/CE213_HDL/LIFO
+Z7 tCvgOpt 0
+n@l@i@f@o
+vTB
+R1
+!i10b 1
+!s100 2?8OZFhZdf`nW0;XR83Ad2
+Il65V[7E22O0AgVdz`mc<33
+R2
+R0
+w1744614920
+8E:/CE213_HDL/LIFO/TB.v
+FE:/CE213_HDL/LIFO/TB.v
+L0 3
+R3
+r1
+!s85 0
+31
+R4
+!s107 E:/CE213_HDL/LIFO/TB.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/CE213_HDL/LIFO|E:/CE213_HDL/LIFO/TB.v|
+!i113 1
+R5
+R6
+R7
+n@t@b

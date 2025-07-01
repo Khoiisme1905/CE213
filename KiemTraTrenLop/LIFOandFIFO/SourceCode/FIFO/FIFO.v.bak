@@ -1,0 +1,23 @@
+module FIFO
+
+reg [31:0] reg_file [31:0];
+reg [4:0] wr_ptr, r_ptr,
+
+assign full 	=	( wr_ptr == 31)
+assign empty 	=	( wr_ptr == r_ptr)
+
+always @(posedge clk)
+	if (rst)
+		wr_ptr	= 0;
+		r_ptr		= 0;
+		out 		= z;
+	else 
+		if ( w_en & !full )
+			reg_file (wr_ptr) <= data_in;
+			wr_ptr 	= wr_ptr + 1;
+		if ( r_en & ! empty )
+			out	= reg_file(r_ptr);
+			r_ptr	= r_ptr + 1;
+			
+			
+		
